@@ -33,8 +33,6 @@ h1 {
   margin-top: 0;
   line-height: 1.45;
 }
-
-/* Jauge de progression */
 #progress-bar {
   width: 100%;
   height: 18px;
@@ -44,7 +42,8 @@ h1 {
   overflow: hidden;
   box-shadow: 0 1px 8px #e3e8f7 inset;
   position: relative;
-  display: none;
+  /* La barre reste cachée UNIQUEMENT sur l'intro */
+  /* display: none; */
 }
 #progress-bar-inner {
   height: 100%;
@@ -52,7 +51,6 @@ h1 {
   border-radius: 11px 0 0 11px;
   transition: width 0.35s cubic-bezier(.68,-0.55,.27,1.55);
 }
-
 img.question-illustration {
   display: block;
   width: 100%;
@@ -87,16 +85,15 @@ img.question-illustration {
     box-shadow 0.17s,
     color 0.17s;
   box-shadow: 0 2px 10px #e1e8f4;
-  /* font-weight: 500; <-- Supprimé le gras */
   font-weight: normal;
   user-select: none;
   position: relative;
 }
 .choice-block.selected {
-  background: linear-gradient(100deg, #43ea77 60%, #11bb46 100%);
-  color: #fff;
-  border-color: #25b845;
-  box-shadow: 0 4px 22px #baf0cd;
+  background: linear-gradient(100deg, #264a97 60%, #19336c 100%);
+  color: #fff !important;
+  border-color: #264a97;
+  box-shadow: 0 4px 22px #aac0e7;
   z-index: 2;
 }
 .choice-block:active {
