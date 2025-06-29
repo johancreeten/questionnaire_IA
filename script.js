@@ -142,8 +142,8 @@ function render() {
   if (current === -1) {
     progressBar.style.display = 'none';
     document.getElementById('app').innerHTML = `
-  <h1>Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
-  <div class="subtitle" style="margin-bottom:16px; font-size:1.15em; color:#345097;">
+  <h1 style="margin-bottom:10px;">Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
+  <div class="subtitle" style="margin-bottom:18px; font-size:1.35em; color:#111; line-height:1.15;">
     7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
   </div>
   <div style="font-size:1.07em; margin-bottom:16px; color:#111; text-align:justify; line-height:1.45;">
@@ -153,6 +153,7 @@ function render() {
   </div>
   <button id="startBtn">Commencer</button>
 `;
+
     document.getElementById('startBtn').onclick = () => {
       current = 0; score = 0; answers = [];
       render();
