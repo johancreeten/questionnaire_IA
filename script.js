@@ -132,7 +132,6 @@ const profils = [
   }
 ];
 
-// -1 : intro, 0...N : questions, N : résultat
 let current = -1;
 let score = 0;
 let answers = [];
@@ -243,7 +242,6 @@ function render() {
   }
 }
 
-// Affiche dès le chargement
 window.onload = function() {
   current = -1;
   render();
