@@ -58,79 +58,99 @@ const questions = [
 ];
 
 const profils = [
+  // 0-2 points : Explorateur Insouciant
   {
-    title: "Utilisateur IA Assisté / Dépendant 😬",
+    title: "L'Explorateur Insouciant de l'IA",
     color: "#ffeaea",
     border: "#c62828",
     explanation: `
-      <div style="font-size:1.13em; margin-bottom:17px; text-align:justify;">
-        <b>Votre relation à l’IA ressemble à celle d’un copilote qui laisse le volant à la machine… presque tout le temps.</b>
-        Vous profitez du confort et du gain de temps, mais vous vous exposez au risque de perdre la maîtrise de vos dossiers, de ne plus défendre votre pensée ou d'oublier le sens critique. 
-        Si l’IA était indisponible demain, il deviendrait difficile de produire, d’argumenter ou d’expliquer vos choix.
+      <div style="font-size:1.13em; margin-bottom:18px; text-align:justify;">
+        <b>Description :</b><br>
+        Vous avez tendance à vous appuyer fortement sur les outils d'IA, que vous considérez souvent comme un substitut direct à l'effort cognitif personnel. Vous privilégiez la vitesse et la commodité, ce qui peut malheureusement entraîner une réduction de votre engagement critique et une dépendance à long terme vis-à-vis de l'outil. Vous êtes ainsi plus susceptible de succomber à la "paresse métacognitive" en déléguant vos responsabilités intellectuelles à l'IA.
       </div>
       <div style="margin-bottom:13px; text-align:justify;">
-        <b>Conseils concrets :</b>
-        <ul style="text-align:left; margin-top:8px;">
-          <li>👉 Avant chaque tâche : notez en 1-2 phrases ce que vous voulez vraiment obtenir, sans IA, puis comparez-le au résultat IA pour garder la main sur vos objectifs.</li>
-          <li>👉 Après chaque usage IA : expliquez à l’oral ce que vous venez d’obtenir, comme si vous deviez l’expliquer à un collègue : cela entraîne votre mémoire et votre appropriation.</li>
-          <li>👉 Refusez au moins 1 fois/jour d’utiliser l’IA pour un problème : cela stimule votre réflexion autonome et vous redonne confiance en vos compétences naturelles.</li>
-          <li>👉 Pour tout document important : lisez systématiquement le texte généré à voix haute, vous repérerez les incohérences et renforcerez votre esprit critique.</li>
-          <li>👉 Chaque semaine, challengez une réponse IA : trouvez une alternative sans IA et comparez, seul ou en équipe.</li>
+        <b>Points d'attention contextualisés :</b>
+        <ul style="margin-top:6px;">
+          <li>• <b>Offload cognitif et "paresse métacognitive"</b> : Vous déléguez facilement des tâches cognitives à l'IA, ce qui peut vous amener à contourner un raisonnement analytique profond. Cette dépendance peut entraîner une forme de "paresse métacognitive", où vos responsabilités cognitives et métacognitives sont transférées à l'IA, ce qui freine votre capacité d'auto-régulation et votre engagement profond avec le matériel.</li>
+          <li>• <b>Mémoire et rappel altérés</b> : Cette forte reliance sur l’IA peut nuire à votre capacité à vous souvenir ou à citer des informations issues de votre propre travail, même celles produites récemment. Votre cerveau risque de s’engager moins profondément dans les processus de mémoire, traitant l’information générée par l’outil de manière plus passive.</li>
+          <li>• <b>Faible sentiment d'appropriation</b> : Vous pouvez ressentir un sentiment d'appartenance fragmenté, voire absent, vis-à-vis du travail produit avec l'IA, attribuant une part significative, voire la majorité, du crédit à l'outil.</li>
+          <li>• <b>Pensée homogène et biaisée</b> : Vos contenus peuvent être statistiquement homogènes et manquer de déviation par rapport aux réponses par défaut de l'IA, avec un biais vers des formes de langage courantes et des réponses moins originales.</li>
+          <li>• <b>Confiance excessive en l'IA</b> : Une confiance élevée dans la capacité de l'IA à effectuer la tâche est souvent associée à moins de pensée critique et à une sous-estimation de la nécessité de vérifier les informations.</li>
         </ul>
       </div>
-      <div style="margin-top:23px; font-style:italic; color:#c62828; text-align:justify;">
-        🧠 L’IA doit rester un booster de vos idées, pas un substitut à votre réflexion !
+      <div style="margin-bottom:13px; text-align:justify;">
+        <b>Pistes d'améliorations contextualisées :</b>
+        <ul style="margin-top:6px;">
+          <li>• <b>Pratiquez la vérification active</b> : Vérifiez et recoupez systématiquement les informations générées par l’IA avec des sources externes fiables, même pour des tâches simples. Développez un scepticisme sain face aux suggestions de l’outil.</li>
+          <li>• <b>Développez votre expertise personnelle</b> : Cherchez à comprendre les principes sous-jacents des solutions offertes par l’IA, plutôt que de simplement les copier ou les appliquer sans réflexion. Posez-vous la question : « Comment aurais-je fait sans l’IA ? »</li>
+          <li>• <b>Engagez une "stewardship" active</b> : Passez d’une exécution passive à un rôle de supervision et d’orientation active de l’IA, en affinant et personnalisant les résultats. Interagissez avec l’IA comme avec un assistant junior qui a besoin d’être guidé.</li>
+          <li>• <b>Équilibrez efficacité et engagement</b> : Utilisez le temps gagné grâce à l’IA pour réfléchir plus en profondeur, améliorer la qualité de votre travail ou explorer de nouvelles idées, plutôt que de passer immédiatement à la tâche suivante.</li>
+        </ul>
       </div>
     `
   },
+  // 3-4 points : Le Stratège de l'IA
   {
-    title: "Utilisateur IA Équilibré / Collaboratif 🤝",
+    title: "Le Stratège de l'IA",
     color: "#e3f2fd",
     border: "#1976d2",
     explanation: `
-      <div style="font-size:1.13em; margin-bottom:17px; text-align:justify;">
-        <b>Bravo, vous savez faire équipe avec l’IA !</b>
-        Vous gagnez du temps, enrichissez vos idées, automatisez des tâches… mais vous gardez le contrôle final. Votre pratique est saine et dynamique, et vous évitez les pièges de l’automatisme. Vous savez ce que vous attendez de l’IA et n’oubliez pas de valider.
+      <div style="font-size:1.13em; margin-bottom:18px; text-align:justify;">
+        <b>Description :</b><br>
+        Vous adoptez une approche plus nuancée, en utilisant l’IA comme un outil de soutien pour accroître votre efficacité sans sacrifier complètement votre engagement cognitif. Vous reconnaissez les avantages de l’IA pour la productivité et vous pouvez vous sentir partiellement propriétaire du travail. Cependant, il peut encore subsister des angles morts concernant la profondeur de votre réflexion critique ou la confiance en vos capacités à effectuer la tâche sans l’outil.
       </div>
       <div style="margin-bottom:13px; text-align:justify;">
-        <b>Pour aller plus loin :</b>
-        <ul style="text-align:left; margin-top:8px;">
-          <li>👉 Programmez une veille IA mensuelle : abonnez-vous à une newsletter IA (<a href="https://supertools.therundown.ai/" target="_blank">Supertools</a> par exemple) pour découvrir de nouveaux usages et rester à la page.</li>
-          <li>👉 Testez régulièrement des prompts plus complexes, explorez l’automatisation, la personnalisation et les chaînes d’outils IA.</li>
-          <li>👉 Gardez toujours un temps de relecture humaine, même pour des tâches secondaires.</li>
-          <li>👉 Partagez vos astuces IA avec un collègue chaque semaine : la pédagogie muscle votre propre maîtrise !</li>
-          <li>👉 Pour toute réponse IA, posez-vous la question : « Qu’est-ce qui me prouve que c’est correct ? » ou utilisez un outil de fact-checking (Elicit, Consensus).</li>
+        <b>Points d'attention contextualisés :</b>
+        <ul style="margin-top:6px;">
+          <li>• <b>Offload modéré mais persistant</b> : Même si vous vous engagez plus que l’utilisateur dépendant, vous pouvez parfois sous-estimer la profondeur de l’engagement cognitif nécessaire pour certaines tâches, menant à une forme de "paresse" ou à un manque de stimulation pour la résolution de problèmes indépendante.</li>
+          <li>• <b>Propriété partagée et intégration</b> : Vous ressentez une propriété partielle du travail, reconnaissant l’apport de l’IA tout en y ajoutant votre touche personnelle. Cet équilibre est positif, mais veillez à ne pas vous contenter du minimum.</li>
+          <li>• <b>Concentration sur l'intégration</b> : L’effort est déplacé de la résolution de problèmes à l’intégration des réponses de l’IA, ce qui peut nécessiter une adaptation pour aligner le contenu généré avec vos directives spécifiques.</li>
+          <li>• <b>Biais potentiel des moteurs de recherche</b> : Si vous utilisez des moteurs de recherche en parallèle, vous pouvez être sensible aux "bulles de filtre" et au contenu optimisé pour le référencement, ce qui influence le vocabulaire et les concepts de vos écrits.</li>
         </ul>
       </div>
-      <div style="margin-top:23px; font-style:italic; color:#1976d2; text-align:justify;">
-        🤝 L’IA devient un vrai partenaire… à condition de rester curieux, critique et exigeant !
+      <div style="margin-bottom:13px; text-align:justify;">
+        <b>Pistes d'améliorations contextualisées :</b>
+        <ul style="margin-top:6px;">
+          <li>• <b>Affinez vos prompts</b> : Développez des compétences avancées en ingénierie d'invites pour guider plus précisément l’IA et obtenir des résultats personnalisés et moins génériques. L’objectif est d’orienter l’IA, pas de la laisser prendre les rênes.</li>
+          <li>• <b>Intégrez de manière critique et personnalisez</b> : Ne vous contentez pas de copier-coller, mais éditez et retravaillez activement le contenu généré par l’IA pour y ajouter votre style unique et garantir la cohérence avec vos objectifs.</li>
+          <li>• <b>Diversifiez vos sources de pensée</b> : Ne vous fiez pas uniquement à l’IA ou aux premiers résultats de recherche. Explorez d’autres perspectives, ressources et sollicitez la réflexion personnelle et l’interaction humaine pour enrichir vos idées.</li>
+          <li>• <b>Évaluez la logique interne</b> : Allez au-delà de la simple vérification factuelle : analysez la cohérence, la pertinence et la logique interne des arguments ou des structures proposées par l’IA.</li>
+        </ul>
       </div>
     `
   },
+  // 5-7 points : Le Maître de l'Esprit Critique Augmenté par l'IA
   {
-    title: "Utilisateur IA Autonome / Esprit Critique 🏆",
+    title: "Le Maître de l'Esprit Critique Augmenté par l'IA",
     color: "#e7fbe7",
     border: "#388e3c",
     explanation: `
-      <div style="font-size:1.16em; margin-bottom:17px; text-align:justify;">
-        <b>Exemplaire !</b> L’IA n’est jamais un substitut à votre réflexion, mais un multiplicateur de vos compétences. Vous l’utilisez pour explorer, synthétiser, accélérer, mais gardez toujours la main et le regard critique. Votre entourage pourrait s’inspirer de vos pratiques.
+      <div style="font-size:1.13em; margin-bottom:18px; text-align:justify;">
+        <b>Description :</b><br>
+        Vous démontrez un niveau élevé d'engagement cognitif, de pensée critique et d'autonomie. Vous percevez l’IA comme un outil d’augmentation de vos propres capacités, en l’utilisant stratégiquement pour approfondir votre compréhension et générer des idées originales, tout en maintenant un sens aigu de la propriété et de la responsabilité de votre travail. Votre confiance en vos compétences vous pousse à toujours plus d’engagement critique.
       </div>
       <div style="margin-bottom:13px; text-align:justify;">
-        <b>Pour continuer à progresser :</b>
-        <ul style="text-align:left; margin-top:8px;">
-          <li>👉 Documentez vos stratégies IA dans un carnet ou un Notion pour garder trace de ce qui fonctionne ou non (prompts, erreurs, cas d’usages).</li>
-          <li>👉 Devenez mentor IA : proposez une mini-formation ou une démo à vos collègues ou à votre réseau.</li>
-          <li>👉 Challengez l’IA sur des tâches inédites (traduction, simulation, audit, etc.) pour repousser les limites de ses usages.</li>
-          <li>👉 Participez à des communautés d’utilisateurs IA (Elicit, <a href="https://www.reddit.com/r/ChatGPT/" target="_blank">Reddit ChatGPT</a>, forums spécialisés) pour enrichir vos pratiques.</li>
-          <li>👉 Soyez vigilant sur la sécurité/confidentialité : ne partagez jamais de données sensibles, et relisez systématiquement ce que vous copiez/collez.</li>
+        <b>Points d'attention contextualisés :</b>
+        <ul style="margin-top:6px;">
+          <li>• <b>Maintenez un engagement profond</b> : Même avec des compétences critiques solides, restez vigilant face à la tentation de la facilité qui pourrait réduire votre engagement profond et l’automatisation de schémas cognitifs robustes.</li>
+          <li>• <b>Évaluez constamment la pertinence</b> : Assurez-vous que l’IA ne renforce pas des biais existants ou ne fournisse pas des informations certes correctes, mais sans nuance ou pertinence contextuelle.</li>
+          <li>• <b>Évitez l'atrophie des compétences</b> : Veillez à ce que l’utilisation de l’IA ne conduise pas à une atrophie de vos compétences pour le brainstorming ou la résolution de problèmes, en continuant à exercer activement votre réflexion et votre créativité.</li>
+          <li>• <b>Détectez le "style IA"</b> : Continuez à cultiver votre capacité à repérer les éléments stylistiques homogènes et génériques typiques des contenus générés par l’IA, même si l’outil progresse.</li>
         </ul>
       </div>
-      <div style="margin-top:23px; font-style:italic; color:#388e3c; text-align:justify;">
-        🏆 Continuez à challenger l’IA, à transmettre vos bonnes pratiques et à rester un pilote, pas un passager !
+      <div style="margin-bottom:13px; text-align:justify;">
+        <b>Pistes d'améliorations contextualisées :</b>
+        <ul style="margin-top:6px;">
+          <li>• <b>Optez pour une utilisation hybride stratégique</b> : Intégrez l’IA pour les aspects routiniers, les phases exploratoires ou le scaffolding, mais revenez toujours à l’effort cognitif auto-dirigé pour les tâches fondamentales comme la génération d’idées, l’organisation et la révision critique.</li>
+          <li>• <b>Renforcez vos réseaux neuronaux</b> : Participez à des activités qui sollicitent activement vos circuits de planification, de langage et d’attention, en alternant les phases d’apprentissage avec et sans IA.</li>
+          <li>• <b>Misez sur l’originalité et la profondeur</b> : Cherchez délibérément à injecter votre personnalité, créativité et nuance dans les contenus produits, en allant au-delà de la perfection ou de la conformité.</li>
+          <li>• <b>Devenez un "expert" de l'IA</b> : Cherchez à comprendre non seulement comment utiliser l’IA, mais aussi ses mécanismes internes, ses limites et ses biais potentiels, pour mieux la superviser et la questionner, devenant ainsi un partenaire éclairé et responsable.</li>
+        </ul>
       </div>
     `
   }
 ];
+
 
 let current = -1;
 let score = 0;
