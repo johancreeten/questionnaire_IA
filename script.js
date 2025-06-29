@@ -116,95 +116,118 @@ const profils = [
   }
 ];
 
-// State : -1 (slide d’intro), 0...N (questions), N+1 (résultat)
+// -1 : intro, 0...N : questions, N : résultat
 let current = -1;
 let score = 0;
 let answers = [];
 
-function renderIntro() {
-  document.getElementById('app').innerHTML = `
-    <h1>Quel genre d’utilisateur·trice d’IA êtes-vous ?</h1>
-    <div class="subtitle">
-      7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
-    </div>
-    <div class="intro-expl">
-      Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.
-    </div>
-    <button id="startBtn">Commencer</button>
-  `;
-  document.getElementById('startBtn').onclick = () => {
-    current = 0;
-    render();
-  }
-}
-
-function updateProgressBar() {
-  // N’affiche la barre que sur les questions/résultats, pas l’intro
-  const el = document.getElementById('progress-bar');
-  if (current >= 0 && current <= questions.length) {
-    const percent = (current) / questions.length * 100;
-    el.innerHTML = `<div id="progress-bar-inner" style="width:${percent}%;"></div>`;
-    el.style.display = '';
-  } else {
-    el.innerHTML = '';
-    el.style.display = 'none';
-  }
-}
-
-function renderQuestion(index) {
-  updateProgressBar();
-
-  const q = questions[index];
-  document.getElementById('app').innerHTML = `
-    <div class="question-text">${q.text}</div>
-    <div class="choice-row">
-      ${q.answers.map((a, i) => `
-        <div class="choice-block" data-index="${i}">${a.text.replace(/^a\)\s*/i, '').replace(/^b\)\s*/i, '')}</div>
-      `).join('')}
-    </div>
-    <button id="nextBtn" type="button" disabled>Suivant</button>
-    <div style="margin-top:15px;text-align:right;font-size:1.04em;color:#6777a7;">
-      ${index+1} / ${questions.length}
-    </div>
-  `;
-
-  let selected = null;
-  const cards = document.querySelectorAll('.choice-block');
-  cards.forEach(card => {
-    card.addEventListener('click', function() {
-      cards.forEach(c => c.classList.remove('selected'));
-      this.classList.add('selected');
-      selected = parseInt(this.getAttribute('data-index'));
-      document.getElementById('nextBtn').disabled = false;
-    });
-  });
-
-  document.getElementById('nextBtn').onclick = function() {
-    if (selected !== null) {
-      answers[index] = q.answers[selected].value;
-      score += q.answers[selected].value;
-      current++;
+function render() {
+  // Slide d'intro
+  if (current === -1) {
+    document.getElementById('progress-bar') && (document.getElementById('progress-bar').style.display = 'none');
+    document.getElementById('app').innerHTML = `
+      <h1>Quel genre d’utilisateur·trice d’IA êtes-vous ?</h1>
+      <div class="subtitle">
+        7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
+      </div>
+      <div class="intro-expl">
+        Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.
+      </div>
+      <button id="startBtn">Commencer</button>
+    `;
+    document.getElementById('startBtn').onclick = () => {
+      current = 0; score = 0; answers = [];
       render();
     }
+    return;
+  }
+
+  // Affichage jauge verte
+  let progressBar = document.getElementById('progress-bar');
+  if (progressBar) {
+    progressBar.style.display = '';
+    const percent = (current >= 0 ? current : 0) / questions.length * 100;
+    progressBar.innerHTML = `<div id="progress-bar-inner" style="width:${percent}%;"></div>`;
+  }
+
+  // Questions
+  if (current < questions.length) {
+    const q = questions[current];
+    document.getElementById('app').innerHTML = `
+      <div class="question-text">${q.text}</div>
+      <div class="choice-row">
+        ${q.answers.map((a, i) => `
+          <div class="choice-block" data-index="${i}">${a.text.replace(/^a\)\s*/i, '').replace(/^b\)\s*/i, '')}</div>
+        `).join('')}
+      </div>
+      <button id="nextBtn" type="button" disabled>Suivant</button>
+      <div style="margin-top:15px;text-align:right;font-size:1.04em;color:#6777a7;">
+        ${current+1} / ${questions.length}
+      </div>
+    `;
+
+    let selected = null;
+    const cards = document.querySelectorAll('.choice-block');
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        cards.forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+        selected = parseInt(this.getAttribute('data-index'));
+        document.getElementById('nextBtn').disabled = false;
+      });
+    });
+
+    document.getElementById('nextBtn').onclick = function() {
+      if (selected !== null) {
+        answers[current] = q.answers[selected].value;
+        score += q.answers[selected].value;
+        current++;
+        render();
+      }
+    }
+    return;
+  }
+
+  // Résultat final
+  if (current === questions.length) {
+    let progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+      progressBar.style.display = '';
+      progressBar.innerHTML = `<div id="progress-bar-inner" style="width:100%;"></div>`;
+    }
+    let profil;
+    if (score >= 6) profil = profils[2];     // Vert, top
+    else if (score >= 3) profil = profils[1]; // Bleu, intermédiaire
+    else profil = profils[0];                 // Rouge, dépendant
+
+    document.getElementById('app').innerHTML = `
+      <div id="result">
+        <div style="
+          background:${profil.color};
+          border:2.5px solid ${profil.border};
+          border-radius:15px;
+          box-shadow:0 2px 12px #e1e2ea;
+          margin:20px 0 0 0;
+          padding:36px 20px 30px 20px;
+          max-width:650px;
+          margin-left:auto;margin-right:auto;
+        ">
+          <div class="profil-title" style="color:${profil.border};font-size:1.25em;margin-bottom:19px;">${profil.title}</div>
+          ${profil.explanation}
+          <div style="text-align:center;">
+            <button style="margin-top:30px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button>
+          </div>
+        </div>
+        <div style="margin-top:23px;color:#909090;font-size:1em;text-align:center;">
+          Score final : <b>${score}</b> / 7
+        </div>
+      </div>
+    `;
   }
 }
 
-function renderResult() {
-  updateProgressBar(); // 100%
-  let profil = profils.find(p => p.condition(score));
-  document.getElementById('app').innerHTML = `
-    <div id="result">
-      <div style="
-        background:${profil.color};
-        border:2.5px solid ${profil.border};
-        border-radius:15px;
-        box-shadow:0 2px 12px #e1e2ea;
-        margin:20px 0 0 0;
-        padding:36px 20px 30px 20px;
-        max-width:650px;
-        margin-left:auto;margin-right:auto;
-      ">
-        <div class="profil-title" style="color:${profil.border};font-size:1.25em;margin-bottom:19px;">${profil.title}</div>
-        ${profil.explanation}
-        <div style="text-align:center;">
-          <button style="margin-top:30px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button
+// Affiche dès le chargement
+window.onload = function() {
+  current = -1;
+  render();
+}
