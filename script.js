@@ -58,14 +58,14 @@ const questions = [
 ];
 
 const profils = [
-  // 0-2 points : Explorateur Insouciant
+  // 0-2 points
   {
-    title: "L'Explorateur Insouciant de l'IA",
+    title: "L'explorateur insouciant de l'IA",
     color: "#ffeaea",
     border: "#c62828",
     explanation: `
-      <div style="font-size:2em; font-weight:700; margin-bottom:26px; color:#c62828; text-align:center;">
-        L'Explorateur Insouciant de l'IA
+      <div style="font-size:2.6em; font-weight:800; margin-bottom:34px; color:#c62828; text-align:center; text-transform:none;">
+        L'explorateur insouciant de l'IA
       </div>
       <div style="font-size:1.16em; margin-bottom:42px; text-align:justify; line-height:1.66;">
         <b>Description :</b><br>
@@ -123,14 +123,14 @@ const profils = [
       </div>
     `
   },
-  // 3-4 points : Le Stratège de l'IA
+  // 3-4 points
   {
-    title: "Le Stratège de l'IA",
+    title: "Le stratège de l'IA",
     color: "#e3f2fd",
     border: "#1976d2",
     explanation: `
-      <div style="font-size:2em; font-weight:700; margin-bottom:26px; color:#1976d2; text-align:center;">
-        Le Stratège de l'IA
+      <div style="font-size:2.6em; font-weight:800; margin-bottom:34px; color:#1976d2; text-align:center; text-transform:none;">
+        Le stratège de l'IA
       </div>
       <div style="font-size:1.16em; margin-bottom:42px; text-align:justify; line-height:1.66;">
         <b>Description :</b><br>
@@ -184,14 +184,14 @@ const profils = [
       </div>
     `
   },
-  // 5-7 points : L'Utilisateur IA Autonome / Esprit Critique
+  // 5-7 points
   {
-    title: "Le Maître de l'Esprit Critique Augmenté par l'IA",
+    title: "Le maître de l'esprit critique augmenté par l'IA",
     color: "#e7fbe7",
     border: "#388e3c",
     explanation: `
-      <div style="font-size:2em; font-weight:700; margin-bottom:26px; color:#388e3c; text-align:center;">
-        Le Maître de l'Esprit Critique Augmenté par l'IA
+      <div style="font-size:2.6em; font-weight:800; margin-bottom:34px; color:#388e3c; text-align:center; text-transform:none;">
+        Le maître de l'esprit critique augmenté par l'IA
       </div>
       <div style="font-size:1.16em; margin-bottom:42px; text-align:justify; line-height:1.66;">
         <b>Description :</b><br>
