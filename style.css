@@ -21,7 +21,7 @@ h1 {
   text-align: center;
   font-size: 2.3em;
   font-weight: 800;
-  color: #1846a1;      /* Bleu foncé */
+  color: #1846a1;
   letter-spacing: 0.7px;
   margin: 44px 0 18px 0;
 }
@@ -47,6 +47,7 @@ h1 {
   box-shadow: 0 1px 6px #e1e7f0bb;
 }
 
+/* --- Jauge de progression --- */
 #progress-bar {
   width: 100%;
   max-width: 700px;
@@ -57,6 +58,7 @@ h1 {
   overflow: hidden;
   box-shadow: 0 2px 9px #e1e7f0a5;
   display: none;
+  position: relative;
 }
 
 #progress-bar-inner {
@@ -67,7 +69,26 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
+
+#progress-bar-inner span {
+  width: 100%;
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.07em;
+  text-shadow: 0 1px 2px #222, 0 0 4px #388e3c99;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --- --- */
 
 .question-illustration {
   display: block;
@@ -86,7 +107,7 @@ h1 {
   font-weight: 500;
   margin-bottom: 30px;
   margin-top: 0;
-  color: #1846a1;
+  color: #111;           /* NOIR ! */
   line-height: 1.36;
 }
 
@@ -163,12 +184,13 @@ button:disabled,
   margin-bottom: 0;
 }
 
+/* --- Bloc Points d'attention (orangé) --- */
 .bloc-orange {
   background: #fff5e4;
   border: 2px solid #ffd28c;
   border-radius: 13px;
-  padding: 31px 21px 30px 21px;
-  margin-bottom: 45px;
+  padding: 33px 26px 33px 26px;
+  margin-bottom: 47px;
   margin-top: 0;
   box-shadow: 0 1px 12px #fde9c2a9;
 }
@@ -176,21 +198,43 @@ button:disabled,
 .bloc-orange ul {
   margin: 0 0 0 0.2em;
   padding-left: 1.25em;
-  line-height: 1.78;
+  line-height: 1.9;
 }
 
 .bloc-orange li {
-  margin-bottom: 16px;
-  font-size: 1.04em;
+  margin-bottom: 22px;
+  font-size: 1.09em;
 }
 
 .bloc-orange li:last-child { margin-bottom: 0; }
 
-#result > div[style*="background"] {
-  /* Pour aérer le bloc pistes d'amélioration (vert/bleu clair) */
-  margin-bottom: 42px !important;
-  margin-top: 44px !important;
+/* --- Bloc Pistes d'améliorations (vert ou bleu clair) --- */
+#result > div[style*="background: #f7fbf6"],
+#result > div[style*="background: #f4fafd"],
+#result > div[style*="background: #eefbee"] {
+  border-radius: 13px !important;
+  padding: 33px 26px 33px 26px !important;
+  margin-bottom: 47px !important;
+  margin-top: 0 !important;
+  box-shadow: 0 1px 13px #d4f0e2a3;
+  border: 2px solid #bee1f2 !important;
 }
+
+#result > div[style*="background: #eefbee"] {
+  border: 2px solid #b9e9c7 !important;
+}
+
+#result ul {
+  margin: 0 0 0 0.2em;
+  padding-left: 1.25em;
+  line-height: 1.9;
+}
+
+#result li {
+  margin-bottom: 22px;
+  font-size: 1.09em;
+}
+#result li:last-child { margin-bottom: 0; }
 
 #result > div[style*="font-size:2.6em"] {
   margin-bottom: 34px !important;
@@ -221,4 +265,3 @@ button:disabled,
 ::-webkit-scrollbar-thumb {
   background: #e3e9f5; border-radius: 7px;
 }
-
