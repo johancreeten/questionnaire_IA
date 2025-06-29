@@ -333,7 +333,9 @@ function render() {
   if (current === -1) {
     progressBar.style.display = 'none';
     document.getElementById('app').innerHTML = `
-      <h1 style="margin-bottom:10px;">Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
+      <h1 style="margin-bottom:10px; color:#1846a1; font-weight:700;">
+  🕵️ Quel genre d’utilisateur d’IA êtes-vous&nbsp;?
+</h1>
       <div class="subtitle" style="margin-bottom:18px; font-size:1.35em; color:#111; line-height:1.15;">
         7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
       </div>
