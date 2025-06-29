@@ -142,21 +142,19 @@ function render() {
   if (current === -1) {
     progressBar.style.display = 'none';
     document.getElementById('app').innerHTML = `
-      <h1>Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
-      <div class="subtitle" style="margin-bottom:18px;">
-        <span style="font-size:1.1em; font-weight:600; color:#345097;">
-          7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
-        </span>
-      </div>
-      <div style="font-size:1.07em; margin-bottom:14px; color:#46545a; text-align:justify; line-height:1.45;">
-        <b>Testez-vous en 2 minutes</b> et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.
-      </div>
-      <div style="background:#eaf3fc; border-radius:8px; color:#203057; padding:12px 16px; margin-bottom:24px; font-size:1.04em; text-align:justify;">
-        <span style="font-weight:500;">Pour un résultat fiable, répondez en toute franchise à chaque question.</span><br>
-        <span style="font-size:0.98em; color:#4d5e7c;">Le masculin employé dans ce questionnaire l'est à titre épicène, pour simplifier la lecture.</span>
-      </div>
-      <button id="startBtn">Commencer</button>
-    `;
+       <h1>Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
+  <div class="subtitle" style="margin-bottom:16px; font-size:1.15em; color:#345097;">
+    7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
+  </div>
+  <div style="font-size:1.07em; margin-bottom:14px; color:#46545a; text-align:justify; line-height:1.45;">
+    Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.
+  </div>
+  <div style="font-size:1.04em; color:#203057; margin-bottom:22px; text-align:justify;">
+    Pour un résultat fiable, répondez en toute franchise à chaque question.<br>
+    <span style="font-size:0.98em; color:#4d5e7c;">Le masculin employé dans ce questionnaire l'est à titre épicène, pour simplifier la lecture.</span>
+  </div>
+  <button id="startBtn">Commencer</button>
+`;
     document.getElementById('startBtn').onclick = () => {
       current = 0; score = 0; answers = [];
       render();
