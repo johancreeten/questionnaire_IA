@@ -1,7 +1,7 @@
 const questions = [
   {
     text: "🤔 Vous venez d'utiliser un outil d'IA pour rédiger un résumé détaillé d'un document complexe. Quelques heures plus tard, un collègue vous demande une information clé de ce résumé.",
-    img: "img/question1.jpg",
+    img: "IMG/question1.jpg",
     answers: [
       { text: "Vous parvenez facilement à vous souvenir de la phrase exacte ou de l'information précise, comme si vous l'aviez écrite vous-même.", value: 1 },
       { text: "Vous avez du mal à vous souvenir des détails exacts et sentez que vous auriez besoin de consulter à nouveau le résumé ou l'IA.", value: 0 }
@@ -9,7 +9,7 @@ const questions = [
   },
   {
     text: "👤 Vous avez créé une présentation avec l'aide substantielle d'une IA. Lorsque quelqu'un vous félicite pour votre travail, vous vous demandez à quel point le travail est réellement le vôtre ?",
-    img: "img/question2.jpg",
+    img: "IMG/question2.jpg",
     answers: [
       { text: "Non car vous ressentez un fort sentiment d'appropriation et de fierté pour l'ensemble du travail, considérant que l'IA n'était qu'un outil à votre service, votre touche personnelle ayant primé sur l'apport de l'IA.", value: 1 },
       { text: "Oui, vous avez un sentiment d'appartenance faible, attribuant une part significative, voire la majorité, du travail à l'IA (par exemple, vous pensez « c'est surtout l'IA qui a tout fait, j'ai juste peaufiné »), percevant l'œuvre comme moins originale.", value: 0 }
@@ -17,7 +17,7 @@ const questions = [
   },
   {
     text: "📝 Vous êtes en train de rédiger un document important et décidez d'utiliser une IA pour générer les premières ébauches ou des sections entières.",
-    img: "img/question3.jpg",
+    img: "IMG/question3.jpg",
     answers: [
       { text: "Votre rôle principal passe de l'exécution de l'écriture à la supervision, à la direction et à l'affinage constant du résultat de l'IA. Par exemple, en posant des questions de clarification, en demandant des reformulations spécifiques, en guidant l'IA vers des sources de données précises.", value: 1 },
       { text: "Vous laissez l'IA s'occuper de la majeure partie de la rédaction percevant l'IA comme un substitut majeur à votre travail d'exécution. Les activités d'analyse, de synthèse et d'évaluation exigent maintenant moins d'effort grâce à l’IA.", value: 0 }
@@ -25,7 +25,7 @@ const questions = [
   },
   {
     text: "🎨 On vous demande de produire une idée qui se veut particulièrement créative ou innovante, par exemple, un concept pour une nouvelle campagne de publicité.",
-    img: "img/question4.jpg",
+    img: "IMG/question4.jpg",
     answers: [
       { text: "Vous utilisez l'IA pour générer des idées ou des ébauches (par exemple, en demandant à l'IA des slogans publicitaires), ce qui vous permet d’atteindre rapidement le but demandé.", value: 0 },
       { text: "Vous avez déjà une grande partie du projet en tête et vous demandez à l’IA d’organiser vos idées. Cela vous permet de garder votre idée de départ mais cela vous prend plus de temps.", value: 1 }
@@ -33,7 +33,7 @@ const questions = [
   },
   {
     text: "✨ Extraordinaire ! L'IA produit un résultat qui correspond parfaitement à ce que vous attendiez pour une tâche, par exemple, une proposition de solution pour un problème récurrent. Vous êtes très satisfait·e.",
-    img: "img/question5.jpg",
+    img: "IMG/question5.jpg",
     answers: [
       { text: "Vous êtes bluffé·e par la puissance de l’IA, sa fluidité d’interaction et vous vous empressez de montrer aux collègues ce que l’IA a produit comme réponse.", value: 0 },
       { text: "Vous préférez évaluer le résultat d’abord en le mettant à l’épreuve même si cela prend plus de temps. Sait-on jamais que l’IA se serait trompée. Personne n’est infaillible après tout.", value: 1 }
@@ -41,7 +41,7 @@ const questions = [
   },
   {
     text: "🔍 Vous rencontrez un problème d’organisation depuis très longtemps dans le service dans lequel vous travaillez et vous décidez de prendre le problème à bras le corps avec l’aide de l’IA.",
-    img: "img/question6.jpg",
+    img: "IMG/question6.jpg",
     answers: [
       { text: "Vous demandez à l'IA une solution qui soit la plus efficace possible, puis vous vous concentrez sur la manière de l'intégrer directement dans votre processus de travail.", value: 0 },
       { text: "Vous analysez le problème en profondeur par vous-même, en utilisant l'IA uniquement pour obtenir des perspectives ou des informations complémentaires.", value: 1 }
@@ -49,7 +49,7 @@ const questions = [
   },
   {
     text: "⏳ Vous avez une charge de travail très élevée, et l'IA vous permet de générer rapidement des ébauches de documents, vous faisant gagner un temps précieux.",
-    img: "img/question7.jpg",
+    img: "IMG/question7.jpg",
     answers: [
       { text: "Vous utilisez le temps gagné pour une réflexion sur d'autres aspects du projet et vous assurer de la qualité supérieure du travail.", value: 1 },
       { text: "Vous appréciez le gain de temps et vous vous concentrez sur l'achèvement rapide de la tâche, sans nécessairement approfondir d'autres aspects.", value: 0 }
@@ -57,7 +57,6 @@ const questions = [
   }
 ];
 
-// Résultats ultra-contextualisés et utiles
 const profils = [
   {
     title: "Utilisateur·trice IA Assisté·e / Dépendant·e 😬",
@@ -214,9 +213,9 @@ function render() {
       progressBar.innerHTML = `<div id="progress-bar-inner" style="width:100%;"></div>`;
     }
     let profil;
-    if (score >= 6) profil = profils[2];     // Vert, top
-    else if (score >= 3) profil = profils[1]; // Bleu, intermédiaire
-    else profil = profils[0];                 // Rouge, dépendant
+    if (score >= 6) profil = profils[2];
+    else if (score >= 3) profil = profils[1];
+    else profil = profils[0];
 
     document.getElementById('app').innerHTML = `
       <div id="result">
