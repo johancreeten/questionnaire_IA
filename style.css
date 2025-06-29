@@ -1,43 +1,83 @@
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-  background: #f3f8fd;
-  border: 2px solid #d1dbe8;
-  border-radius: 13px;
-  padding: 24px 20px;
-  margin-bottom: 34px;
-  font-size: 1.16em;
-  cursor: pointer;
-  transition: background 0.18s, border 0.18s;
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f9fc;
+  margin: 0;
+  padding: 0;
 }
-
-.checkbox-label:hover {
-  background: #e7f0fa;
-  border-color: #5d7be9;
-}
-
-.checkbox-custom {
-  appearance: none;
-  width: 32px;
-  height: 32px;
-  border: 2.5px solid #c2d1ef;
-  border-radius: 8px;
+.container {
+  max-width: 620px;
+  margin: 40px auto 0 auto;
   background: #fff;
-  transition: border 0.13s;
-  margin-right: 10px;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px #b3c1e7;
+  padding: 38px 34px 32px 34px;
+}
+h1 {
+  color: #3949ab;
+  margin-bottom: 11px;
+  text-align: center;
+  letter-spacing: .5px;
+}
+.subtitle {
+  color: #425672;
+  font-size: 1.17em;
+  text-align: center;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+#quiz {
+  margin-top: 10px;
+}
+.question-text {
+  font-size: 1.19em;
+  margin-bottom: 29px;
+  font-weight: 600;
+}
+.choice-card {
+  background: #eaf3fc;
+  border: 2px solid #c3d3e7;
+  border-radius: 10px;
+  padding: 18px 16px;
+  margin-bottom: 20px;
+  font-size: 1.13em;
+  transition: background 0.16s, border 0.16s, box-shadow 0.16s;
   cursor: pointer;
   position: relative;
+  box-shadow: 0 2px 8px #e1e8f4;
 }
-.checkbox-custom:checked {
-  border-color: #3949ab;
-  background: #dbeafe;
+.choice-card.selected,
+.choice-card:hover {
+  background: #d1e3fc;
+  border-color: #3f51b5;
+  box-shadow: 0 4px 18px #c9d8f0;
 }
-.checkbox-custom:checked::after {
-  content: '✔';
-  color: #3949ab;
-  position: absolute;
-  font-size: 1.6em;
-  left: 5px;
-  top: 1px;
+button {
+  display: block;
+  margin: 30px auto 0 auto;
+  padding: 13px 38px;
+  background: #aeb4ca;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.11em;
+  font-weight: 500;
+  box-shadow: 0 2px 10px #ccd6f6;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+button:disabled {
+  background: #c9cad3;
+  cursor: not-allowed;
+}
+button:not(:disabled) {
+  background: #3949ab;
+}
+#result {
+  margin-top: 44px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .container { padding: 16px 3vw; }
+  .question-text { font-size: 1.05em; }
+  .choice-card { font-size: 1em; }
 }
