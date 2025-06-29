@@ -282,17 +282,7 @@ function render() {
     const percent = Math.round((current / questions.length) * 100);
     progressBar.innerHTML = `
       <div id="progress-bar-inner" style="width:${percent}%;position:relative;">
-        <span style="
-          position:absolute;
-          left:0; right:0; top:0; bottom:0;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          color:#fff;
-          font-weight:bold;
-          font-size:1.05em;
-          text-shadow: 0 1px 2px #222, 0 0 4px #388e3c99;
-          letter-spacing:0.5px;">
+        <span>
           ${percent}%
         </span>
       </div>
