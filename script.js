@@ -57,37 +57,46 @@ const questions = [
   }
 ];
 
-cconst profils = [
+const profils = [
   // 0-2 points : Explorateur Insouciant
   {
     title: "L'Explorateur Insouciant de l'IA",
     color: "#ffeaea",
     border: "#c62828",
     explanation: `
-      <div style="font-size:2em; font-weight:700; margin-bottom:14px; color:#c62828; text-align:center;">
+      <div style="font-size:2em; font-weight:700; margin-bottom:18px; color:#c62828; text-align:center;">
         L'Explorateur Insouciant de l'IA
       </div>
-      <div style="font-size:1.16em; margin-bottom:18px; text-align:justify;">
+      <div style="font-size:1.16em; margin-bottom:24px; text-align:justify;">
         <b>Description :</b><br>
         Vous avez tendance à vous appuyer fortement sur les outils d'IA, que vous considérez souvent comme un substitut direct à l'effort cognitif personnel. Vous privilégiez la vitesse et la commodité, ce qui peut malheureusement entraîner une réduction de votre engagement critique et une dépendance à long terme vis-à-vis de l'outil. Vous êtes ainsi plus susceptible de succomber à la "paresse métacognitive" en déléguant vos responsabilités intellectuelles à l'IA.
       </div>
-      <div style="font-size:1.16em; margin-bottom:18px; text-align:justify;">
+      <div style="font-size:1.16em; margin-bottom:24px; text-align:justify;">
         <b>Points d'attention :</b>
-        <ul style="margin-top:8px; margin-bottom:8px;">
-          <li><b>Offload cognitif</b> : Vous déléguez facilement des tâches cognitives à l'IA, ce qui peut vous amener à éviter un raisonnement analytique approfondi. <br><span style="color:#c62828;">Exemple : vous copiez une réponse IA sans jamais reformuler avec vos mots ou vérifier sa logique.</span></li>
-          <li><b>Mémoire et rappel</b> : Cette forte reliance sur l’IA peut nuire à votre capacité à vous souvenir ou à citer des informations issues de votre propre travail. <br><span style="color:#c62828;">Exemple : impossible de réexpliquer le contenu d’un texte généré par IA même juste après l’avoir utilisé.</span></li>
-          <li><b>Faible sentiment d'appropriation</b> : Vous pouvez ressentir un sentiment d'appartenance fragmenté vis-à-vis du travail produit avec l'IA. <br><span style="color:#c62828;">Exemple : vous hésitez à signer un rapport rédigé à partir de ChatGPT, car il ne “vous ressemble” pas.</span></li>
-          <li><b>Pensée homogène</b> : Vos contenus peuvent manquer d’originalité et se caler sur les réponses types de l’IA. <br><span style="color:#c62828;">Exemple : vos emails ou rapports reprennent toujours les mêmes formulations générées.</span></li>
-          <li><b>Confiance excessive en l'IA</b> : Vous faites confiance sans vérifier ni remettre en question l’information produite. <br><span style="color:#c62828;">Exemple : vous recopiez une date ou un chiffre proposé par l’IA sans la comparer à une source fiable.</span></li>
+        <ul style="margin-top:8px; margin-bottom:10px;">
+          <li><b>Offload cognitif</b> : Vous déléguez facilement des tâches cognitives à l'IA, ce qui peut vous amener à éviter un raisonnement analytique approfondi.<br>
+          <span style="color:#c62828;">Exemple : vous copiez une réponse IA sans jamais reformuler avec vos mots ou vérifier sa logique.</span></li>
+          <li style="margin-top:10px;"><b>Mémoire et rappel</b> : Cette forte reliance sur l’IA peut nuire à votre capacité à vous souvenir ou à citer des informations issues de votre propre travail.<br>
+          <span style="color:#c62828;">Exemple : impossible de réexpliquer le contenu d’un texte généré par IA même juste après l’avoir utilisé.</span></li>
+          <li style="margin-top:10px;"><b>Faible sentiment d'appropriation</b> : Vous pouvez ressentir un sentiment d'appartenance fragmenté vis-à-vis du travail produit avec l'IA.<br>
+          <span style="color:#c62828;">Exemple : vous hésitez à signer un rapport rédigé à partir de ChatGPT, car il ne “vous ressemble” pas.</span></li>
+          <li style="margin-top:10px;"><b>Pensée homogène</b> : Vos contenus peuvent manquer d’originalité et se caler sur les réponses types de l’IA.<br>
+          <span style="color:#c62828;">Exemple : vos emails ou rapports reprennent toujours les mêmes formulations générées.</span></li>
+          <li style="margin-top:10px;"><b>Confiance excessive en l'IA</b> : Vous faites confiance sans vérifier ni remettre en question l’information produite.<br>
+          <span style="color:#c62828;">Exemple : vous recopiez une date ou un chiffre proposé par l’IA sans la comparer à une source fiable.</span></li>
         </ul>
       </div>
-      <div style="font-size:1.16em; margin-bottom:0px; text-align:justify;">
+      <div style="font-size:1.16em; text-align:justify;">
         <b>Pistes d'amélioration :</b>
         <ul style="margin-top:8px;">
-          <li><b>Vérification active</b> : Recoupez systématiquement les informations générées par l’IA avec des sources fiables. <br><span style="color:#c62828;">Exemple : tapez une affirmation clé sur Google ou dans un ouvrage avant de la réutiliser.</span></li>
-          <li><b>Développer votre expertise personnelle</b> : Cherchez à comprendre le raisonnement derrière chaque solution proposée. <br><span style="color:#c62828;">Exemple : si l’IA suggère une structure de plan, essayez d’expliquer pourquoi elle est pertinente avant de la reprendre.</span></li>
-          <li><b>Orientation active de l’IA</b> : Jouez un vrai rôle de superviseur. <br><span style="color:#c62828;">Exemple : donnez des consignes précises (“rends le texte plus synthétique” ou “utilise le vocabulaire technique de mon secteur”).</span></li>
-          <li><b>Équilibrer efficacité et réflexion</b> : Prenez le temps de revenir sur le texte généré pour l’améliorer ou l’approfondir. <br><span style="color:#c62828;">Exemple : ajoutez au moins une idée personnelle à chaque texte produit avec l’IA.</span></li>
+          <li><b>Vérification active</b> : Recoupez systématiquement les informations générées par l’IA avec des sources fiables.<br>
+          <span style="color:#c62828;">Exemple : tapez une affirmation clé sur Google ou dans un ouvrage avant de la réutiliser.</span></li>
+          <li style="margin-top:10px;"><b>Développer votre expertise personnelle</b> : Cherchez à comprendre le raisonnement derrière chaque solution proposée.<br>
+          <span style="color:#c62828;">Exemple : si l’IA suggère une structure de plan, essayez d’expliquer pourquoi elle est pertinente avant de la reprendre.</span></li>
+          <li style="margin-top:10px;"><b>Orientation active de l’IA</b> : Jouez un vrai rôle de superviseur.<br>
+          <span style="color:#c62828;">Exemple : donnez des consignes précises (“rends le texte plus synthétique” ou “utilise le vocabulaire technique de mon secteur”).</span></li>
+          <li style="margin-top:10px;"><b>Équilibrer efficacité et réflexion</b> : Prenez le temps de revenir sur le texte généré pour l’améliorer ou l’approfondir.<br>
+          <span style="color:#c62828;">Exemple : ajoutez au moins une idée personnelle à chaque texte produit avec l’IA.</span></li>
         </ul>
       </div>
     `
@@ -98,29 +107,37 @@ cconst profils = [
     color: "#e3f2fd",
     border: "#1976d2",
     explanation: `
-      <div style="font-size:2em; font-weight:700; margin-bottom:14px; color:#1976d2; text-align:center;">
+      <div style="font-size:2em; font-weight:700; margin-bottom:18px; color:#1976d2; text-align:center;">
         Le Stratège de l'IA
       </div>
-      <div style="font-size:1.16em; margin-bottom:18px; text-align:justify;">
+      <div style="font-size:1.16em; margin-bottom:24px; text-align:justify;">
         <b>Description :</b><br>
         Vous adoptez une approche nuancée, en utilisant l’IA comme un outil de soutien pour accroître votre efficacité sans sacrifier votre engagement cognitif. Vous reconnaissez les avantages de l’IA pour la productivité et vous pouvez vous sentir partiellement propriétaire du travail, même si vous avez parfois des doutes sur votre propre valeur ajoutée.
       </div>
-      <div style="font-size:1.16em; margin-bottom:18px; text-align:justify;">
+      <div style="font-size:1.16em; margin-bottom:24px; text-align:justify;">
         <b>Points d'attention :</b>
-        <ul style="margin-top:8px; margin-bottom:8px;">
-          <li><b>Offload modéré</b> : Vous pouvez parfois sous-estimer la réflexion nécessaire pour certaines tâches, surtout en mode “copier-coller”. <br><span style="color:#1976d2;">Exemple : vous acceptez la proposition de structure de l’IA sans y apporter d’ajustement.</span></li>
-          <li><b>Propriété partagée</b> : Vous ressentez une propriété partielle du travail. <br><span style="color:#1976d2;">Exemple : vous signez un rapport IA sans y apporter votre style, car il répond déjà “au cahier des charges”.</span></li>
-          <li><b>Concentration sur l'intégration</b> : L’effort est déplacé vers l’adaptation du contenu IA à vos besoins, parfois au détriment de la création. <br><span style="color:#1976d2;">Exemple : vous reformulez les paragraphes IA, mais sans remettre en cause la structure globale.</span></li>
-          <li><b>Biais de recherche</b> : L’IA peut vous ramener les réponses les plus courantes ou “SEO”. <br><span style="color:#1976d2;">Exemple : vous retrouvez dans votre texte des phrases toutes faites qu’on voit souvent en ligne.</span></li>
+        <ul style="margin-top:8px; margin-bottom:10px;">
+          <li><b>Offload modéré</b> : Vous pouvez parfois sous-estimer la réflexion nécessaire pour certaines tâches, surtout en mode “copier-coller”.<br>
+          <span style="color:#1976d2;">Exemple : vous acceptez la proposition de structure de l’IA sans y apporter d’ajustement.</span></li>
+          <li style="margin-top:10px;"><b>Propriété partagée</b> : Vous ressentez une propriété partielle du travail.<br>
+          <span style="color:#1976d2;">Exemple : vous signez un rapport IA sans y apporter votre style, car il répond déjà “au cahier des charges”.</span></li>
+          <li style="margin-top:10px;"><b>Concentration sur l'intégration</b> : L’effort est déplacé vers l’adaptation du contenu IA à vos besoins, parfois au détriment de la création.<br>
+          <span style="color:#1976d2;">Exemple : vous reformulez les paragraphes IA, mais sans remettre en cause la structure globale.</span></li>
+          <li style="margin-top:10px;"><b>Biais de recherche</b> : L’IA peut vous ramener les réponses les plus courantes ou “SEO”.<br>
+          <span style="color:#1976d2;">Exemple : vous retrouvez dans votre texte des phrases toutes faites qu’on voit souvent en ligne.</span></li>
         </ul>
       </div>
-      <div style="font-size:1.16em; margin-bottom:0px; text-align:justify;">
+      <div style="font-size:1.16em; text-align:justify;">
         <b>Pistes d'amélioration :</b>
         <ul style="margin-top:8px;">
-          <li><b>Affinez vos prompts</b> : Apprenez à demander des réponses plus personnalisées ou originales à l’IA. <br><span style="color:#1976d2;">Exemple : demandez “Peux-tu développer avec des exemples issus du monde associatif ?”</span></li>
-          <li><b>Personnalisez le contenu</b> : Ne vous contentez pas du résultat brut, ajoutez votre style, un exemple ou une anecdote personnelle. <br><span style="color:#1976d2;">Exemple : modifiez la conclusion IA pour inclure une expérience vécue.</span></li>
-          <li><b>Diversifiez vos sources</b> : Consultez d’autres points de vue (livres, experts, collègues) en plus de l’IA. <br><span style="color:#1976d2;">Exemple : confrontez la réponse IA à une publication scientifique ou à une discussion avec un collègue.</span></li>
-          <li><b>Évaluez la logique interne</b> : Relisez pour vérifier la cohérence globale et la pertinence. <br><span style="color:#1976d2;">Exemple : posez-vous la question “est-ce que l’argument tient la route du début à la fin ?”</span></li>
+          <li><b>Affinez vos prompts</b> : Apprenez à demander des réponses plus personnalisées ou originales à l’IA.<br>
+          <span style="color:#1976d2;">Exemple : demandez “Peux-tu développer avec des exemples issus du monde associatif ?”</span></li>
+          <li style="margin-top:10px;"><b>Personnalisez le contenu</b> : Ne vous contentez pas du résultat brut, ajoutez votre style, un exemple ou une anecdote personnelle.<br>
+          <span style="color:#1976d2;">Exemple : modifiez la conclusion IA pour inclure une expérience vécue.</span></li>
+          <li style="margin-top:10px;"><b>Diversifiez vos sources</b> : Consultez d’autres points de vue (livres, experts, collègues) en plus de l’IA.<br>
+          <span style="color:#1976d2;">Exemple : confrontez la réponse IA à une publication scientifique ou à une discussion avec un collègue.</span></li>
+          <li style="margin-top:10px;"><b>Évaluez la logique interne</b> : Relisez pour vérifier la cohérence globale et la pertinence.<br>
+          <span style="color:#1976d2;">Exemple : posez-vous la question “est-ce que l’argument tient la route du début à la fin ?”</span></li>
         </ul>
       </div>
     `
@@ -131,42 +148,48 @@ cconst profils = [
     color: "#e7fbe7",
     border: "#388e3c",
     explanation: `
-      <div style="font-size:2em; font-weight:700; margin-bottom:14px; color:#388e3c; text-align:center;">
+      <div style="font-size:2em; font-weight:700; margin-bottom:18px; color:#388e3c; text-align:center;">
         Le Maître de l'Esprit Critique Augmenté par l'IA
       </div>
-      <div style="font-size:1.16em; margin-bottom:18px; text-align:justify;">
+      <div style="font-size:1.16em; margin-bottom:24px; text-align:justify;">
         <b>Description :</b><br>
         Vous démontrez un engagement cognitif élevé et un vrai sens de l’autonomie. Vous percevez l’IA comme un levier pour approfondir votre réflexion et générer des idées originales, tout en gardant le contrôle et la responsabilité du résultat. Votre confiance en vos compétences et votre sens du recul sont des atouts majeurs.
       </div>
-      <div style="font-size:1.16em; margin-bottom:18px; text-align:justify;">
+      <div style="font-size:1.16em; margin-bottom:24px; text-align:justify;">
         <b>Points d'attention :</b>
-        <ul style="margin-top:8px; margin-bottom:8px;">
-          <li><b>Maintenir l'engagement</b> : Ne relâchez pas votre vigilance même quand l’IA semble “tout faire bien”. <br><span style="color:#388e3c;">Exemple : vous lisez attentivement chaque réponse IA avant de l’adopter, même si elle paraît parfaite.</span></li>
-          <li><b>Évaluer la pertinence</b> : Questionnez la nuance ou la contextualisation des réponses IA. <br><span style="color:#388e3c;">Exemple : vous corrigez une généralité IA en l’illustrant par un cas local ou une exception concrète.</span></li>
-          <li><b>Entretenir vos compétences</b> : Continuez à exercer vos propres capacités d’analyse et de créativité pour ne pas perdre la main. <br><span style="color:#388e3c;">Exemple : vous rédigez une partie du texte sans IA avant de comparer avec sa version.</span></li>
-          <li><b>Détecter le style IA</b> : Restez attentif aux tournures “génériques” ou stéréotypées produites par l’outil. <br><span style="color:#388e3c;">Exemple : vous réécrivez une phrase trop lisse ou banale générée par l’IA pour y injecter votre style.</span></li>
+        <ul style="margin-top:8px; margin-bottom:10px;">
+          <li><b>Maintenir l'engagement</b> : Ne relâchez pas votre vigilance même quand l’IA semble “tout faire bien”.<br>
+          <span style="color:#388e3c;">Exemple : vous lisez attentivement chaque réponse IA avant de l’adopter, même si elle paraît parfaite.</span></li>
+          <li style="margin-top:10px;"><b>Évaluer la pertinence</b> : Questionnez la nuance ou la contextualisation des réponses IA.<br>
+          <span style="color:#388e3c;">Exemple : vous corrigez une généralité IA en l’illustrant par un cas local ou une exception concrète.</span></li>
+          <li style="margin-top:10px;"><b>Entretenir vos compétences</b> : Continuez à exercer vos propres capacités d’analyse et de créativité pour ne pas perdre la main.<br>
+          <span style="color:#388e3c;">Exemple : vous rédigez une partie du texte sans IA avant de comparer avec sa version.</span></li>
+          <li style="margin-top:10px;"><b>Détecter le style IA</b> : Restez attentif aux tournures “génériques” ou stéréotypées produites par l’outil.<br>
+          <span style="color:#388e3c;">Exemple : vous réécrivez une phrase trop lisse ou banale générée par l’IA pour y injecter votre style.</span></li>
         </ul>
       </div>
-      <div style="font-size:1.16em; margin-bottom:0px; text-align:justify;">
+      <div style="font-size:1.16em; text-align:justify;">
         <b>Pistes d'amélioration :</b>
         <ul style="margin-top:8px;">
-          <li><b>Utilisation hybride stratégique</b> : Utilisez l’IA pour l’exploration ou la structuration, mais revenez au travail “manuel” pour les idées centrales. <br><span style="color:#388e3c;">Exemple : laissez l’IA générer un plan, puis remplissez chaque partie de votre main.</span></li>
-          <li><b>Renforcez vos réseaux neuronaux</b> : Variez les modes d'apprentissage et de réflexion. <br><span style="color:#388e3c;">Exemple : alternez lecture, écriture sans IA et brainstorming à l’ancienne.</span></li>
-          <li><b>Misez sur la créativité</b> : Ajoutez toujours une touche personnelle ou inattendue. <br><span style="color:#388e3c;">Exemple : glissez une anecdote, une image ou une métaphore originale dans le texte final.</span></li>
-          <li><b>Devenez un “expert IA”</b> : Cherchez à comprendre les mécanismes, les limites et les biais de l’outil. <br><span style="color:#388e3c;">Exemple : explorez les paramètres avancés de ChatGPT ou lisez un article sur l’éthique de l’IA.</span></li>
+          <li><b>Utilisation hybride stratégique</b> : Utilisez l’IA pour l’exploration ou la structuration, mais revenez au travail “manuel” pour les idées centrales.<br>
+          <span style="color:#388e3c;">Exemple : laissez l’IA générer un plan, puis remplissez chaque partie de votre main.</span></li>
+          <li style="margin-top:10px;"><b>Renforcez vos réseaux neuronaux</b> : Variez les modes d'apprentissage et de réflexion.<br>
+          <span style="color:#388e3c;">Exemple : alternez lecture, écriture sans IA et brainstorming à l’ancienne.</span></li>
+          <li style="margin-top:10px;"><b>Misez sur la créativité</b> : Ajoutez toujours une touche personnelle ou inattendue.<br>
+          <span style="color:#388e3c;">Exemple : glissez une anecdote, une image ou une métaphore originale dans le texte final.</span></li>
+          <li style="margin-top:10px;"><b>Devenez un “expert IA”</b> : Cherchez à comprendre les mécanismes, les limites et les biais de l’outil.<br>
+          <span style="color:#388e3c;">Exemple : explorez les paramètres avancés de ChatGPT ou lisez un article sur l’éthique de l’IA.</span></li>
         </ul>
       </div>
     `
   }
 ];
 
-
 let current = -1;
 let score = 0;
 let answers = [];
 
 function render() {
-  // Slide d'intro ou progression
   let progressBar = document.getElementById('progress-bar');
   if (current === -1) {
     progressBar.style.display = 'none';
@@ -210,7 +233,6 @@ function render() {
     `;
   }
 
-  // Questions
   if (current < questions.length) {
     const q = questions[current];
     document.getElementById('app').innerHTML = `
@@ -249,12 +271,9 @@ function render() {
     return;
   }
 
-  // Résultat final
   if (current === questions.length) {
-    // On masque la barre de progression
     progressBar.style.display = 'none';
 
-    // Calcul du score en pourcentage
     const percentScore = Math.round((score / questions.length) * 100);
     let profil;
     if (score >= 5) profil = profils[2];
@@ -264,45 +283,48 @@ function render() {
 
     document.getElementById('app').innerHTML = `
       <div id="result">
-        <div style="text-align:center; margin-bottom:20px;">
+        <div style="text-align:center; margin-bottom:24px;">
           <span style="
             display:inline-block;
-            font-size:2.3em;
+            font-size:2.4em;
             font-weight:700;
             color:${scoreColor};
-            margin-bottom:5px;
+            margin-bottom:7px;
             letter-spacing:1px;
           ">${percentScore}%</span>
-          <div style="font-size:1.06em; color:#444; margin-top:2px;">de maîtrise IA</div>
+          <div style="font-size:1.09em; color:#444; margin-top:3px;">de maîtrise IA</div>
         </div>
         <div style="
           background:${profil.color};
           border:2.5px solid ${profil.border};
           border-radius:15px;
           box-shadow:0 2px 12px #e1e2ea;
-          margin:8px 0 0 0;
-          padding:36px 20px 30px 20px;
-          max-width:650px;
+          margin:10px 0 0 0;
+          padding:38px 24px 28px 24px;
+          max-width:700px;
           margin-left:auto;margin-right:auto;
         ">
-          <div class="profil-title" style="color:${profil.border};font-size:1.25em;margin-bottom:19px;">${profil.title}</div>
           ${profil.explanation}
           <div style="text-align:center;">
-            <button style="margin-top:30px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button>
+            <button style="margin-top:32px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button>
           </div>
         </div>
-        <div style="margin-top:30px; font-size:0.97em; color:#666; max-width:650px; margin-left:auto; margin-right:auto; line-height:1.48;">
-          <hr style="margin:18px 0 10px 0; border:none; border-top:1px solid #e0e0e0;">
-          <div style="font-size:1em; margin-bottom:6px;">
+        <div style="margin-top:36px; font-size:0.99em; color:#666; max-width:700px; margin-left:auto; margin-right:auto; line-height:1.52; text-align:left;">
+          <hr style="margin:18px 0 14px 0; border:none; border-top:1px solid #e0e0e0;">
+          <div style="font-size:1em; margin-bottom:10px;">
             <b>Ce questionnaire a été créé par <a href="https://www.linkedin.com/in/johan-creeten" target="_blank" style="color:#3973a5;text-decoration:underline;">Johan Creeten</a></b>
           </div>
-          <div style="margin-bottom:3px;">
-            <b>Sources :</b>
-            <ul style="margin:7px 0 0 16px;padding:0;">
-              <li>Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., &amp; Maes, P. (2025). Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task. Prépublication (probablement arXiv:2506.08872v1), MIT Media Lab, MIT, Wellesley College, Mass. College of Art and Design (MassArt).</li>
-              <li>Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025). The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers. Dans CHI Conference on Human Factors in Computing Systems (CHI ’25), 26 avril – 1er mai 2025, Yokohama, Japon. ACM. DOI : 10.1145/3706598.3713778.</li>
-              <li>Gerlich, M. (2025). AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking. Societies, 15(1), 6. DOI : 10.3390/soc15010006</li>
-            </ul>
+          <b>Sources :</b>
+          <div style="margin:10px 0 0 0; padding:0; text-align:left;">
+            <div style="margin-bottom:16px;">
+              Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., &amp; Maes, P. (2025). <i>Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task.</i> Prépublication (probablement arXiv:2506.08872v1), MIT Media Lab, MIT, Wellesley College, Mass. College of Art and Design (MassArt).
+            </div>
+            <div style="margin-bottom:16px;">
+              Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025). <i>The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers.</i> Dans CHI Conference on Human Factors in Computing Systems (CHI ’25), 26 avril – 1er mai 2025, Yokohama, Japon. ACM. DOI : 10.1145/3706598.3713778.
+            </div>
+            <div>
+              Gerlich, M. (2025). <i>AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking.</i> Societies, 15(1), 6. DOI : 10.3390/soc15010006
+            </div>
           </div>
         </div>
       </div>
