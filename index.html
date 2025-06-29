@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quel genre d’utilisateur.trice d’IA êtes-vous ?</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fafafa; margin: 0; padding: 30px; }
+    h1 { color: #3949ab; }
+    .question { margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 10px; box-shadow: 0 1px 5px #eee; }
+    label { display: block; margin-bottom: 8px; }
+    button { padding: 10px 25px; background: #3949ab; color: #fff; border: none; border-radius: 5px; font-size: 1.1em; }
+    #result { margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 10px; font-size: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>Quel genre d’utilisateur.trice d’IA êtes-vous ?</h1>
+  <form id="quiz-form">
 
+    <!-- Question 1 -->
+    <div class="question">
+      <p>1. Vous venez d'utiliser un outil d'IA pour rédiger un résumé détaillé d'un document complexe. Quelques heures plus tard, un collègue vous demande une information clé de ce résumé.</p>
+      <label>
+        <input type="radio" name="q1" value="1" required>
+        a) Vous parvenez facilement à vous souvenir de la phrase exacte ou de l'information précise, comme si vous l'aviez écrite vous-même.
+      </label>
+      <label>
+        <input type="radio" name="q1" value="0">
+        b) Vous avez du mal à vous souvenir des détails exacts et sentez que vous auriez besoin de consulter à nouveau le résumé ou l'IA.
+      </label>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+      <p>2. Vous avez créé une présentation avec l'aide substantielle d'une IA. Lorsque quelqu'un vous félicite pour votre travail, vous vous demandez à quel point le travail est réellement le vôtre ?</p>
+      <label>
+        <input type="radio" name="q2" value="1" required>
+        a) Non car vous ressentez un fort sentiment d'appropriation et de fierté pour l'ensemble du travail, considérant que l'IA n'était qu'un outil à votre service, votre touche personnelle ayant primé sur l'apport de l'IA.
+      </label>
+      <label>
+        <input type="radio" name="q2" value="0">
+        b) Oui, vous avez un sentiment d'appartenance faible, attribuant une part significative, voire la majorité, du travail à l'IA (par exemple, vous pensez "c'est surtout l'IA qui a tout fait, j'ai juste peaufiné"), percevant l'œuvre comme moins originale.
+      </label>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+      <p>3. Vous êtes en train de rédiger un document important et décidez d'utiliser une IA pour générer les premières ébauches ou des sections entières.</p>
+      <label>
+        <input type="radio" name="q3" value="1" required>
+        a) Votre rôle principal passe de l'exécution de l'écriture à la supervision, à la direction et à l'affinage constant du résultat de l'IA. Par exemple, en posant des questions de clarification, en demandant des reformulations spécifiques, en guidant l'IA vers des sources de données précises.
+      </label>
+      <label>
+        <input type="radio" name="q3" value="0">
+        b) Vous laissez l'IA s'occuper de la majeure partie de la rédaction percevant l'IA comme un substitut majeur à votre travail d'exécution. Les activités d'analyse, de synthèse et d'évaluation exigent maintenant moins d'effort grâce à l’IA.
+      </label>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+      <p>4. On vous demande de produire une idée qui se veut particulièrement créative ou innovante, par exemple, un concept pour une nouvelle campagne de publicité.</p>
+      <label>
+        <input type="radio" name="q4" value="0" required>
+        a) Vous utilisez l'IA pour générer des idées ou des ébauches (par exemple, en demandant à l'IA des slogans publicitaires), ce qui vous permet d’atteindre rapidement le but demandé.
+      </label>
+      <label>
+        <input type="radio" name="q4" value="1">
+        b) Vous avez déjà une grande partie du projet en tête et vous demandez à l’IA d’organiser vos idées. Cela vous permet de garder votre idée de départ mais cela vous prend plus de temps.
+      </label>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+      <p>5. Extraordinaire ! L'IA produit un résultat qui correspond parfaitement à ce que vous attendiez pour une tâche, par exemple, une proposition de solution pour un problème récurrent. Vous êtes très satisfait.e.</p>
+      <label>
+        <input type="radio" name="q5" value="0" required>
+        a) Vous êtes bluffé.e par la puissance de l’IA, sa fluidité d’interaction et vous vous empressez de montrer aux collègues ce que l’IA a produit comme réponse.
+      </label>
+      <label>
+        <input type="radio" name="q5" value="1">
+        b) Vous préférez évaluer le résultat d’abord en le mettant à l’épreuve même si cela prend plus de temps. Sait-on jamais que l’IA se serait trompée. Personne n’est infaillible après tout.
+      </label>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+      <p>6. Vous rencontrez un problème d’organisation depuis très longtemps dans le service dans lequel vous travaillez et vous décidez de prendre le problème à bras le corps avec l’aide de l’IA :</p>
+      <label>
+        <input type="radio" name="q6" value="0" required>
+        a) Vous demandez à l'IA une solution qui soit la plus efficace possible, puis vous vous concentrez sur la manière de l'intégrer directement dans votre processus de travail.
+      </label>
+      <label>
+        <input type="radio" name="q6" value="1">
+        b) Vous analysez le problème en profondeur par vous-même, en utilisant l'IA uniquement pour obtenir des perspectives ou des informations complémentaires.
+      </label>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+      <p>7. Vous avez une charge de travail très élevée, et l'IA vous permet de générer rapidement des ébauches de documents, vous faisant gagner un temps précieux.</p>
+      <label>
+        <input type="radio" name="q7" value="1" required>
+        a) Vous utilisez le temps gagné pour une réflexion sur d'autres aspects du projet et vous assurer de la qualité supérieure du travail.
+      </label>
+      <label>
+        <input type="radio" name="q7" value="0">
+        b) Vous appréciez le gain de temps et vous vous concentrez sur l'achèvement rapide de la tâche, sans nécessairement approfondir d'autres aspects.
+      </label>
+    </div>
+
+    <button type="submit">Voir mon profil IA</button>
+  </form>
+  <div id="result"></div>
+  <script>
+    document.getElementById("quiz-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 7; i++) {
+        let radios = document.getElementsByName("q" + i);
+        for (let radio of radios) {
+          if (radio.checked) {
+            score += parseInt(radio.value);
+          }
+        }
+      }
+      let profil = "";
+      if (score <= 2) {
+        profil = "<strong>Utilisateur.trice IA Assisté·e / Dépendant·e</strong><br><em>Vous déléguez beaucoup à l’IA et risquez de perdre en autonomie critique…</em>";
+      } else if (score <= 4) {
+        profil = "<strong>Utilisateur.trice IA Équilibré·e / Collaboratif·ve</strong><br><em>Vous combinez efficacité et regard critique sur l’IA.</em>";
+      } else {
+        profil = "<strong>Utilisateur.trice IA Autonome / Esprit Critique</strong><br><em>L’IA ne remplace pas votre réflexion. Vous gardez la maîtrise !</em>";
+      }
+      document.getElementById("result").innerHTML =
+        `<h2>Votre score : ${score}/7</h2><p>${profil}</p>`;
+    });
+  </script>
+</body>
+</html>
