@@ -141,7 +141,7 @@ function render() {
   if (current === -1) {
     document.getElementById('progress-bar').style.display = 'none';
     document.getElementById('app').innerHTML = `
-      <h1>Quel genre d’utilisateur d’IA êtes-vous ?</h1>
+      <h1>🕵️ Quel genre d’utilisateur d’IA êtes-vous ?</h1>
       <div class="subtitle">
         7 questions-clés pour révéler votre niveau et booster vos usages !
       </div>
