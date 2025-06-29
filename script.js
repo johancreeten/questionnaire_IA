@@ -142,16 +142,14 @@ function render() {
   if (current === -1) {
     progressBar.style.display = 'none';
     document.getElementById('app').innerHTML = `
-       <h1>Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
+  <h1>Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
   <div class="subtitle" style="margin-bottom:16px; font-size:1.15em; color:#345097;">
     7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
   </div>
-  <div style="font-size:1.07em; margin-bottom:14px; color:#46545a; text-align:justify; line-height:1.45;">
-    Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.
-  </div>
-  <div style="font-size:1.04em; color:#203057; margin-bottom:22px; text-align:justify;">
+  <div style="font-size:1.07em; margin-bottom:16px; color:#111; text-align:justify; line-height:1.45;">
+    Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.<br><br>
     Pour un résultat fiable, répondez en toute franchise à chaque question.<br>
-    <span style="font-size:0.98em; color:#4d5e7c;">Le masculin employé dans ce questionnaire l'est à titre épicène, pour simplifier la lecture.</span>
+    Le masculin employé dans ce questionnaire l'est à titre épicène, pour simplifier la lecture.
   </div>
   <button id="startBtn">Commencer</button>
 `;
