@@ -18,15 +18,17 @@ body {
   hyphens: auto;
 }
 
+/* TITRE */
 h1 {
   text-align: center;
   font-size: 2.1em;
   letter-spacing: 0.7px;
   margin: 34px 0 10px 0;
   font-weight: 700;
-  color: #1846a1; /* bleu foncé pour le titre */
+  color: #1846a1; /* bleu foncé */
 }
 
+/* Sous-titre */
 .subtitle {
   text-align: center;
   font-size: 1.32em;
@@ -64,13 +66,13 @@ h1 {
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 2px 12px #e2e7ee;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .question-text {
   font-size: 1.28em;
   font-weight: 500;
-  margin-bottom: 32px;
+  margin-bottom: 34px;
   margin-top: 8px;
   text-align: justify;
   line-height: 1.38;
@@ -84,7 +86,7 @@ h1 {
   display: flex;
   gap: 28px;
   justify-content: space-between;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .choice-block {
@@ -135,6 +137,77 @@ button[disabled] {
   margin-top: 34px;
   margin-bottom: 0;
 }
+
+/* --------------------------- PROFIL : PLUS AÉRÉ --------------------------- */
+
+/* Grand encadré résultat */
+#result > div[style*="background"] {
+  margin-bottom: 38px !important;
+  padding-top: 36px !important;
+  padding-bottom: 28px !important;
+}
+
+/* Description principale */
+#result div[style*="font-size:1.16em; margin-bottom:24px; text-align:justify;"] {
+  margin-bottom: 38px !important;
+  line-height: 1.66 !important;
+}
+
+/* Séparateurs titres Points/Pistes */
+#result div[style*="font-size:1.13em"] {
+  margin-bottom: 22px !important;
+  margin-top: 2px !important;
+  letter-spacing: 0.1px;
+}
+
+/* Listes plus aérées dans les profils */
+#result ul {
+  margin-bottom: 32px !important;
+  margin-top: 20px !important;
+  padding-left: 34px !important;
+}
+
+#result li {
+  margin-bottom: 19px !important;
+  line-height: 1.6 !important;
+}
+
+/* Encadrés d'exemple */
+#result div[style*="color:#c62828"],
+#result div[style*="color:#1976d2"],
+#result div[style*="color:#388e3c"] {
+  margin-top: 11px !important;
+  margin-bottom: 20px !important;
+  padding-left: 20px !important;
+  font-size: 1.02em !important;
+  opacity: 0.93;
+  line-height: 1.5 !important;
+}
+
+#result > div[style*="background"] + div[style*="background"] {
+  margin-top: 42px !important;
+}
+
+/* Espacement vertical après le titre du profil */
+#result > div > div[style*="font-size:2em;"] {
+  margin-bottom: 26px !important;
+}
+
+/* Espace entre score et fiche profil */
+#result > div[style*="text-align:center; margin-bottom:24px;"] {
+  margin-bottom: 37px !important;
+}
+
+/* Pour éviter toute compacité sur très grands écrans */
+@media (min-width: 1200px) {
+  #app {
+    max-width: 800px;
+    padding-left: 54px;
+    padding-right: 54px;
+  }
+}
+
+/* --------------------------------- FIN PROFIL ---------------------------- */
 
 hr {
   border: none;
