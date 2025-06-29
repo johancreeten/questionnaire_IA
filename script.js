@@ -58,7 +58,7 @@ const questions = [
 ];
 
 const profils = [
-  // Profil 0 : Explorateur Insouciant
+  // Profil 0
   {
     title: "L'Explorateur Insouciant de l'IA",
     color: "#ffeaea",
@@ -71,12 +71,7 @@ const profils = [
         <b>Description :</b><br>
         Vous avez tendance à vous appuyer fortement sur les outils d'IA, les considérant souvent comme un substitut direct à l'effort cognitif personnel. Vous privilégiez la vitesse et la commodité, ce qui peut malheureusement entraîner une réduction de l'engagement critique et une dépendance à long terme vis-à-vis de l'outil. Ce profil est plus susceptible de succomber à la "paresse métacognitive" en déléguant des responsabilités intellectuelles à l'IA.
       </div>
-      <div style="
-        background: #fff5f5;
-        border: 1.5px solid #f4cccc;
-        border-radius: 11px;
-        padding: 19px 16px 14px 16px;
-        margin-bottom:24px;">
+      <div style="background: #fff5f5; border: 1.5px solid #f4cccc; border-radius: 11px; padding: 19px 16px 14px 16px; margin-bottom:24px;">
         <div style="font-size:1.13em; font-weight:700; color:#b22020; margin-bottom:10px;">
           ⚠️ Points d'attention
         </div>
@@ -113,11 +108,7 @@ const profils = [
           </li>
         </ul>
       </div>
-      <div style="
-        background: #f7fbf6;
-        border: 1.5px solid #d0eadc;
-        border-radius: 11px;
-        padding: 19px 16px 14px 16px;">
+      <div style="background: #f7fbf6; border: 1.5px solid #d0eadc; border-radius: 11px; padding: 19px 16px 14px 16px;">
         <div style="font-size:1.13em; font-weight:700; color:#388e3c; margin-bottom:10px;">
           💡 Pistes d'améliorations
         </div>
@@ -150,7 +141,7 @@ const profils = [
       </div>
     `
   },
-  // Profil 1 : Stratège de l'IA
+  // Profil 1
   {
     title: "Le Stratège de l'IA",
     color: "#e3f2fd",
@@ -163,12 +154,7 @@ const profils = [
         <b>Description :</b><br>
         Vous adoptez une approche plus nuancée, utilisant l'IA comme un outil de soutien pour accroître votre efficacité sans nécessairement sacrifier complètement votre engagement cognitif. Vous reconnaissez les avantages de l'IA pour la productivité et pouvez vous sentir partiellement propriétaire du travail, mais vous pouvez encore avoir des angles morts concernant la profondeur de votre réflexion critique ou votre propre confiance en vos capacités à effectuer la tâche sans l'outil.
       </div>
-      <div style="
-        background: #f3f8fe;
-        border: 1.5px solid #b3d1f5;
-        border-radius: 11px;
-        padding: 19px 16px 14px 16px;
-        margin-bottom:24px;">
+      <div style="background: #f3f8fe; border: 1.5px solid #b3d1f5; border-radius: 11px; padding: 19px 16px 14px 16px; margin-bottom:24px;">
         <div style="font-size:1.13em; font-weight:700; color:#2176c1; margin-bottom:10px;">
           ⚠️ Points d'attention
         </div>
@@ -199,11 +185,7 @@ const profils = [
           </li>
         </ul>
       </div>
-      <div style="
-        background: #f4fafd;
-        border: 1.5px solid #bee1f2;
-        border-radius: 11px;
-        padding: 19px 16px 14px 16px;">
+      <div style="background: #f4fafd; border: 1.5px solid #bee1f2; border-radius: 11px; padding: 19px 16px 14px 16px;">
         <div style="font-size:1.13em; font-weight:700; color:#1976d2; margin-bottom:10px;">
           💡 Pistes d'améliorations
         </div>
@@ -236,7 +218,7 @@ const profils = [
       </div>
     `
   },
-  // Profil 2 : Maître de l'Esprit Critique
+  // Profil 2
   {
     title: "Le Maître de l'Esprit Critique Augmenté par l'IA",
     color: "#e7fbe7",
@@ -249,12 +231,7 @@ const profils = [
         <b>Description :</b><br>
         Vous démontrez un niveau élevé d'engagement cognitif, de pensée critique et d'autonomie. Vous percevez l'IA comme un outil d'augmentation de vos propres capacités, en l'utilisant stratégiquement pour approfondir votre compréhension et générer des idées originales, tout en maintenant un sens aigu de la propriété et de la responsabilité de votre travail. Votre confiance en vos propres compétences vous pousse à davantage d'engagement critique.
       </div>
-      <div style="
-        background: #eefbee;
-        border: 1.5px solid #b9e9c7;
-        border-radius: 11px;
-        padding: 19px 16px 14px 16px;
-        margin-bottom:24px;">
+      <div style="background: #eefbee; border: 1.5px solid #b9e9c7; border-radius: 11px; padding: 19px 16px 14px 16px; margin-bottom:24px;">
         <div style="font-size:1.13em; font-weight:700; color:#388e3c; margin-bottom:10px;">
           ⚠️ Points d'attention
         </div>
@@ -285,11 +262,7 @@ const profils = [
           </li>
         </ul>
       </div>
-      <div style="
-        background: #f7fcf6;
-        border: 1.5px solid #c1f0cb;
-        border-radius: 11px;
-        padding: 19px 16px 14px 16px;">
+      <div style="background: #f7fcf6; border: 1.5px solid #c1f0cb; border-radius: 11px; padding: 19px 16px 14px 16px;">
         <div style="font-size:1.13em; font-weight:700; color:#388e3c; margin-bottom:10px;">
           💡 Pistes d'améliorations
         </div>
@@ -334,8 +307,8 @@ function render() {
     progressBar.style.display = 'none';
     document.getElementById('app').innerHTML = `
       <h1 style="margin-bottom:10px; color:#1846a1; font-weight:700;">
-  🕵️ Quel genre d’utilisateur d’IA êtes-vous&nbsp;?
-</h1>
+        🕵️ Quel genre d’utilisateur d’IA êtes-vous&nbsp;?
+      </h1>
       <div class="subtitle" style="margin-bottom:18px; font-size:1.35em; color:#111; line-height:1.15;">
         7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
       </div>
