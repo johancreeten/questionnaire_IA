@@ -245,20 +245,17 @@ button:disabled,
     padding: 22px 10px 22px 10px !important;
     min-height: unset;
   }
-  h1 {
-    font-size: 1.27em;
-    margin: 14px 0 9px 0;
-    line-height: 1.22;
-    text-align: left;
-  }
-  .subtitle {
-    font-size: 1.14em;
-    margin-bottom: 10px;
-    text-align: left;
+  h1,
+  .subtitle,
+  .entry-content,
+  .question-text,
+  .choice-block,
+  .credit {
+    font-size: 1.16em !important;
+    line-height: 1.36;
   }
   .entry-content {
     padding: 6px 0 6px 0;
-    font-size: 1.09em;
     background: none;
     box-shadow: none;
     border-radius: 0;
@@ -271,35 +268,15 @@ button:disabled,
     border-radius: 11px;
     margin-bottom: 11px;
   }
-  .question-text {
-    font-size: 1.13em;
-    margin-bottom: 13px;
-    line-height: 1.26;
-    text-align: left;
-    font-weight: 500;
-  }
   .choice-row {
     gap: 8px;
     margin-bottom: 13px;
   }
-  .choice-block {
-    font-size: 1.09em;
-    padding: 12px 8px 12px 8px;
-    border-radius: 9px;
-    text-align: left;
-    box-shadow: 0 1px 4px #e4e8f140;
-    line-height: 1.33;
-  }
   #nextBtn, button, #startBtn {
-    font-size: 1.10em;
+    font-size: 1.16em;
     padding: 12px 14px;
     border-radius: 9px;
     margin-top: 13px;
-  }
-  .credit {
-    font-size: 0.93em;
-    margin: 14px auto 0 auto;
-    text-align: left;
   }
   #progress-bar {
     height: 14px;
@@ -318,4 +295,4 @@ button:disabled,
 }
 ::-webkit-scrollbar-thumb {
   background: #e3e9f5; border-radius: 7px;
-}
+  }
