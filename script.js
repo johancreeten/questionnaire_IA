@@ -139,13 +139,16 @@ let answers = [];
 function render() {
   // Barre de progression
   let progressBar = document.getElementById('progress-bar');
-  // Toujours visible sauf sur l'intro
   if (current === -1) {
     progressBar.style.display = 'none';
     document.getElementById('app').innerHTML = `
       <h1>Quel genre d’utilisateur d’IA êtes-vous ?</h1>
       <div class="subtitle">
-        7 questions-clés pour révéler votre niveau et booster vos usages !
+        7 questions-clés pour révéler votre niveau et booster vos usages !<br>
+        <span style="font-size:0.97em;font-weight:normal;color:#666;">
+          Répondez le plus honnêtement possible afin que le calcul de votre profil soit le plus précis.<br>
+          L’utilisation du masculin dans ce questionnaire est à titre épicène.
+        </span>
       </div>
       <div class="intro-expl">
         Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.
@@ -159,8 +162,25 @@ function render() {
     return;
   } else {
     progressBar.style.display = '';
-    const percent = (current >= 0 ? current : 0) / questions.length * 100;
-    progressBar.innerHTML = `<div id="progress-bar-inner" style="width:${percent}%;"></div>`;
+    const percent = Math.round((current / questions.length) * 100);
+    progressBar.innerHTML = `
+      <div id="progress-bar-inner" style="width:${percent}%;position:relative;">
+        <span style="
+          position:absolute;
+          left:0; right:0; top:0; bottom:0;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          color:#fff;
+          font-weight:bold;
+          font-size:1.05em;
+          text-shadow: 0 1px 2px #222, 0 0 4px #388e3c99;
+          letter-spacing:0.5px;
+          ">
+          ${percent}%
+        </span>
+      </div>
+    `;
   }
 
   // Questions
@@ -205,7 +225,24 @@ function render() {
   // Résultat final
   if (current === questions.length) {
     progressBar.style.display = '';
-    progressBar.innerHTML = `<div id="progress-bar-inner" style="width:100%;"></div>`;
+    progressBar.innerHTML = `
+      <div id="progress-bar-inner" style="width:100%;position:relative;">
+        <span style="
+          position:absolute;
+          left:0; right:0; top:0; bottom:0;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          color:#fff;
+          font-weight:bold;
+          font-size:1.05em;
+          text-shadow: 0 1px 2px #222, 0 0 4px #388e3c99;
+          letter-spacing:0.5px;
+          ">
+          100%
+        </span>
+      </div>
+    `;
     let profil;
     if (score >= 6) profil = profils[2];
     else if (score >= 3) profil = profils[1];
