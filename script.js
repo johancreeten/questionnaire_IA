@@ -151,13 +151,12 @@ const profils = [
   }
 ];
 
-
 let current = -1;
 let score = 0;
 let answers = [];
 
 function render() {
-  // Barre de progression
+  // Slide d'intro ou progression
   let progressBar = document.getElementById('progress-bar');
   if (current === -1) {
     progressBar.style.display = 'none';
@@ -248,7 +247,7 @@ function render() {
     // Calcul du score en pourcentage
     const percentScore = Math.round((score / questions.length) * 100);
     let profil;
-    if (score >= 6) profil = profils[2];
+    if (score >= 5) profil = profils[2];
     else if (score >= 3) profil = profils[1];
     else profil = profils[0];
     let scoreColor = profil.border;
@@ -280,6 +279,20 @@ function render() {
           ${profil.explanation}
           <div style="text-align:center;">
             <button style="margin-top:30px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button>
+          </div>
+        </div>
+        <div style="margin-top:30px; font-size:0.97em; color:#666; max-width:650px; margin-left:auto; margin-right:auto; line-height:1.48;">
+          <hr style="margin:18px 0 10px 0; border:none; border-top:1px solid #e0e0e0;">
+          <div style="font-size:1em; margin-bottom:6px;">
+            <b>Ce questionnaire a été créé par <a href="https://www.linkedin.com/in/johan-creeten" target="_blank" style="color:#3973a5;text-decoration:underline;">Johan Creeten</a></b>
+          </div>
+          <div style="margin-bottom:3px;">
+            <b>Sources :</b>
+            <ul style="margin:7px 0 0 16px;padding:0;">
+              <li>Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., &amp; Maes, P. (2025). Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task. Prépublication (probablement arXiv:2506.08872v1), MIT Media Lab, MIT, Wellesley College, Mass. College of Art and Design (MassArt).</li>
+              <li>Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025). The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers. Dans CHI Conference on Human Factors in Computing Systems (CHI ’25), 26 avril – 1er mai 2025, Yokohama, Japon. ACM. DOI : 10.1145/3706598.3713778.</li>
+              <li>Gerlich, M. (2025). AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking. Societies, 15(1), 6. DOI : 10.3390/soc15010006</li>
+            </ul>
           </div>
         </div>
       </div>
