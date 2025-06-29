@@ -19,16 +19,13 @@ body {
 }
 
 h1 {
+ h1 {
   text-align: center;
-  font-size: 2.25em;
-  letter-spacing: 0.7px;
-  margin: 42px 0 12px 0;
+  font-size: 2.3em;
   font-weight: 800;
-  color: #1846a1;
-  background: linear-gradient(87deg, #1846a1 65%, #428fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #1846a1;       /* BLEU FONCÉ, sans effet */
+  letter-spacing: 0.7px;
+  margin: 44px 0 18px 0;
 }
 
 .subtitle {
