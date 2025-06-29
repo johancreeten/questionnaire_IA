@@ -1,92 +1,43 @@
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #e3f2fd, #f5f5f5 80%);
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 530px;
-  margin: 45px auto 0 auto;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 6px 24px #b3c1e7;
-  padding: 36px 34px 30px 34px;
-}
-
-h1 {
-  color: #3949ab;
-  margin-bottom: 18px;
-  text-align: center;
-  letter-spacing: .5px;
-}
-
-#quiz {
-  margin-top: 20px;
-}
-
-.question-text {
-  font-size: 1.23em;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-.answer {
-  display: block;
-  margin-bottom: 18px;
-  padding: 14px 16px;
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 17px;
   background: #f3f8fd;
-  border: 1.5px solid #c7d3ec;
-  border-radius: 7px;
+  border: 2px solid #d1dbe8;
+  border-radius: 13px;
+  padding: 24px 20px;
+  margin-bottom: 34px;
+  font-size: 1.16em;
   cursor: pointer;
-  transition: background 0.15s, border 0.15s;
-  font-size: 1.07em;
+  transition: background 0.18s, border 0.18s;
 }
 
-.answer.selected,
-.answer:hover {
-  background: #dbeafe;
+.checkbox-label:hover {
+  background: #e7f0fa;
+  border-color: #5d7be9;
+}
+
+.checkbox-custom {
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border: 2.5px solid #c2d1ef;
+  border-radius: 8px;
+  background: #fff;
+  transition: border 0.13s;
+  margin-right: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.checkbox-custom:checked {
   border-color: #3949ab;
+  background: #dbeafe;
 }
-
-button {
-  display: block;
-  margin: 32px auto 0 auto;
-  padding: 13px 40px;
-  background: #3949ab;
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  font-size: 1.12em;
-  font-weight: 500;
-  box-shadow: 0 2px 10px #ccd6f6;
-  cursor: pointer;
-  transition: background 0.18s;
-}
-
-button:disabled {
-  background: #b4b7c7;
-  cursor: not-allowed;
-}
-
-#result {
-  margin-top: 44px;
-  text-align: center;
-  font-size: 1.22em;
-  background: #f0f6fa;
-  border-radius: 10px;
-  padding: 30px 16px;
-  box-shadow: 0 2px 14px #dbeafe;
-}
-
-.profil-title {
-  color: #1a237e;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 650px) {
-  .container { padding: 20px 6vw; }
+.checkbox-custom:checked::after {
+  content: '✔';
+  color: #3949ab;
+  position: absolute;
+  font-size: 1.6em;
+  left: 5px;
+  top: 1px;
 }
