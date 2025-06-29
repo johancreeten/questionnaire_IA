@@ -137,11 +137,13 @@ let score = 0;
 let answers = [];
 
 function render() {
-  // Slide d'intro
+  // Barre de progression
+  let progressBar = document.getElementById('progress-bar');
+  // Toujours visible sauf sur l'intro
   if (current === -1) {
-    document.getElementById('progress-bar').style.display = 'none';
+    progressBar.style.display = 'none';
     document.getElementById('app').innerHTML = `
-      <h1>🕵️ Quel genre d’utilisateur d’IA êtes-vous ?</h1>
+      <h1>Quel genre d’utilisateur d’IA êtes-vous ?</h1>
       <div class="subtitle">
         7 questions-clés pour révéler votre niveau et booster vos usages !
       </div>
@@ -155,11 +157,7 @@ function render() {
       render();
     }
     return;
-  }
-
-  // Affichage jauge verte
-  let progressBar = document.getElementById('progress-bar');
-  if (progressBar) {
+  } else {
     progressBar.style.display = '';
     const percent = (current >= 0 ? current : 0) / questions.length * 100;
     progressBar.innerHTML = `<div id="progress-bar-inner" style="width:${percent}%;"></div>`;
@@ -206,11 +204,8 @@ function render() {
 
   // Résultat final
   if (current === questions.length) {
-    let progressBar = document.getElementById('progress-bar');
-    if (progressBar) {
-      progressBar.style.display = '';
-      progressBar.innerHTML = `<div id="progress-bar-inner" style="width:100%;"></div>`;
-    }
+    progressBar.style.display = '';
+    progressBar.innerHTML = `<div id="progress-bar-inner" style="width:100%;"></div>`;
     let profil;
     if (score >= 6) profil = profils[2];
     else if (score >= 3) profil = profils[1];
