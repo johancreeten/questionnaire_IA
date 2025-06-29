@@ -14,6 +14,8 @@ body {
   border-radius: 22px;
   box-shadow: 0 4px 28px #e1e6f0;
   min-height: 650px;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 h1 {
@@ -22,6 +24,7 @@ h1 {
   letter-spacing: 0.7px;
   margin: 34px 0 10px 0;
   font-weight: 700;
+  color: #1846a1; /* bleu foncé pour le titre */
 }
 
 .subtitle {
@@ -30,6 +33,7 @@ h1 {
   font-weight: 600;
   margin-bottom: 16px;
   color: #3d4350;
+  max-width: 100%;
 }
 
 #progress-bar {
@@ -71,6 +75,9 @@ h1 {
   text-align: justify;
   line-height: 1.38;
   color: #232537;
+  max-width: 100%;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .choice-row {
@@ -93,6 +100,9 @@ h1 {
   cursor: pointer;
   transition: border-color 0.16s, background 0.16s, color 0.16s;
   text-align: justify;
+  max-width: 100%;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .choice-block.selected {
@@ -130,6 +140,21 @@ hr {
   border: none;
   border-top: 1px solid #e0e0e0;
   margin: 18px 0 14px 0;
+}
+
+a {
+  color: #2356aa;
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 26px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+li {
+  margin-bottom: 7px;
 }
 
 @media print {
