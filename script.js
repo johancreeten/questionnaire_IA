@@ -137,23 +137,22 @@ let score = 0;
 let answers = [];
 
 function render() {
-  // Slide d'intro
+  // Barre de progression
   let progressBar = document.getElementById('progress-bar');
   if (current === -1) {
     progressBar.style.display = 'none';
     document.getElementById('app').innerHTML = `
-  <h1 style="margin-bottom:10px;">Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
-  <div class="subtitle" style="margin-bottom:18px; font-size:1.35em; color:#111; line-height:1.15;">
-    7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
-  </div>
-  <div style="font-size:1.07em; margin-bottom:16px; color:#111; text-align:justify; line-height:1.45;">
-    Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.<br><br>
-    Pour un résultat fiable, répondez en toute franchise à chaque question.<br>
-    Le masculin employé dans ce questionnaire l'est à titre épicène, pour simplifier la lecture.
-  </div>
-  <button id="startBtn">Commencer</button>
-`;
-
+      <h1 style="margin-bottom:10px;">Quel genre d’utilisateur d’IA êtes-vous&nbsp;?</h1>
+      <div class="subtitle" style="margin-bottom:18px; font-size:1.35em; color:#111; line-height:1.15;">
+        7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
+      </div>
+      <div style="font-size:1.07em; margin-bottom:16px; color:#111; text-align:justify; line-height:1.45;">
+        Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.<br><br>
+        Pour un résultat fiable, répondez en toute franchise à chaque question.<br>
+        Le masculin employé dans ce questionnaire l'est à titre épicène, pour simplifier la lecture.
+      </div>
+      <button id="startBtn">Commencer</button>
+    `;
     document.getElementById('startBtn').onclick = () => {
       current = 0; score = 0; answers = [];
       render();
@@ -223,38 +222,36 @@ function render() {
 
   // Résultat final
   if (current === questions.length) {
-    progressBar.style.display = '';
-    progressBar.innerHTML = `
-      <div id="progress-bar-inner" style="width:100%;position:relative;">
-        <span style="
-          position:absolute;
-          left:0; right:0; top:0; bottom:0;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          color:#fff;
-          font-weight:bold;
-          font-size:1.05em;
-          text-shadow: 0 1px 2px #222, 0 0 4px #388e3c99;
-          letter-spacing:0.5px;
-          ">
-          100%
-        </span>
-      </div>
-    `;
+    // On masque la barre de progression
+    progressBar.style.display = 'none';
+
+    // Calcul du score en pourcentage
+    const percentScore = Math.round((score / questions.length) * 100);
     let profil;
     if (score >= 6) profil = profils[2];
     else if (score >= 3) profil = profils[1];
     else profil = profils[0];
+    let scoreColor = profil.border;
 
     document.getElementById('app').innerHTML = `
       <div id="result">
+        <div style="text-align:center; margin-bottom:20px;">
+          <span style="
+            display:inline-block;
+            font-size:2.3em;
+            font-weight:700;
+            color:${scoreColor};
+            margin-bottom:5px;
+            letter-spacing:1px;
+          ">${percentScore}%</span>
+          <div style="font-size:1.06em; color:#444; margin-top:2px;">de maîtrise IA</div>
+        </div>
         <div style="
           background:${profil.color};
           border:2.5px solid ${profil.border};
           border-radius:15px;
           box-shadow:0 2px 12px #e1e2ea;
-          margin:20px 0 0 0;
+          margin:8px 0 0 0;
           padding:36px 20px 30px 20px;
           max-width:650px;
           margin-left:auto;margin-right:auto;
@@ -264,9 +261,6 @@ function render() {
           <div style="text-align:center;">
             <button style="margin-top:30px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button>
           </div>
-        </div>
-        <div style="margin-top:23px;color:#909090;font-size:1em;text-align:center;">
-          Score final : <b>${score}</b> / 7
         </div>
       </div>
     `;
