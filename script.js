@@ -2,50 +2,50 @@ const questions = [
   {
     text: "🤔 Vous venez d'utiliser un outil d'IA pour rédiger un résumé détaillé d'un document complexe. Quelques heures plus tard, un collègue vous demande une information clé de ce résumé.",
     answers: [
-      { text: "Vous parvenez facilement à vous souvenir de la phrase exacte ou de l'information précise, comme si vous l'aviez écrite vous-même.", value: 1 },
-      { text: "Vous avez du mal à vous souvenir des détails exacts et sentez que vous auriez besoin de consulter à nouveau le résumé ou l'IA.", value: 0 }
+      { text: "a) Vous parvenez facilement à vous souvenir de la phrase exacte ou de l'information précise, comme si vous l'aviez écrite vous-même.", value: 1 },
+      { text: "b) Vous avez du mal à vous souvenir des détails exacts et sentez que vous auriez besoin de consulter à nouveau le résumé ou l'IA.", value: 0 }
     ]
   },
   {
     text: "👤 Vous avez créé une présentation avec l'aide substantielle d'une IA. Lorsque quelqu'un vous félicite pour votre travail, vous vous demandez à quel point le travail est réellement le vôtre ?",
     answers: [
-      { text: "Non car vous ressentez un fort sentiment d'appropriation et de fierté pour l'ensemble du travail, considérant que l'IA n'était qu'un outil à votre service, votre touche personnelle ayant primé sur l'apport de l'IA.", value: 1 },
-      { text: "Oui, vous avez un sentiment d'appartenance faible, attribuant une part significative, voire la majorité, du travail à l'IA (par exemple, vous pensez \"c'est surtout l'IA qui a tout fait, j'ai juste peaufiné\"), percevant l'œuvre comme moins originale.", value: 0 }
+      { text: "a) Non car vous ressentez un fort sentiment d'appropriation et de fierté pour l'ensemble du travail, considérant que l'IA n'était qu'un outil à votre service, votre touche personnelle ayant primé sur l'apport de l'IA.", value: 1 },
+      { text: "b) Oui, vous avez un sentiment d'appartenance faible, attribuant une part significative, voire la majorité, du travail à l'IA (par exemple, vous pensez \"c'est surtout l'IA qui a tout fait, j'ai juste peaufiné\"), percevant l'œuvre comme moins originale.", value: 0 }
     ]
   },
   {
     text: "📝 Vous êtes en train de rédiger un document important et décidez d'utiliser une IA pour générer les premières ébauches ou des sections entières.",
     answers: [
-      { text: "Votre rôle principal passe de l'exécution de l'écriture à la supervision, à la direction et à l'affinage constant du résultat de l'IA. Par exemple, en posant des questions de clarification, en demandant des reformulations spécifiques, en guidant l'IA vers des sources de données précises.", value: 1 },
-      { text: "Vous laissez l'IA s'occuper de la majeure partie de la rédaction percevant l'IA comme un substitut majeur à votre travail d'exécution. Les activités d'analyse, de synthèse et d'évaluation exigent maintenant moins d'effort grâce à l’IA.", value: 0 }
+      { text: "a) Votre rôle principal passe de l'exécution de l'écriture à la supervision, à la direction et à l'affinage constant du résultat de l'IA. Par exemple, en posant des questions de clarification, en demandant des reformulations spécifiques, en guidant l'IA vers des sources de données précises.", value: 1 },
+      { text: "b) Vous laissez l'IA s'occuper de la majeure partie de la rédaction percevant l'IA comme un substitut majeur à votre travail d'exécution. Les activités d'analyse, de synthèse et d'évaluation exigent maintenant moins d'effort grâce à l’IA.", value: 0 }
     ]
   },
   {
     text: "🎨 On vous demande de produire une idée qui se veut particulièrement créative ou innovante, par exemple, un concept pour une nouvelle campagne de publicité.",
     answers: [
-      { text: "Vous utilisez l'IA pour générer des idées ou des ébauches (par exemple, en demandant à l'IA des slogans publicitaires), ce qui vous permet d’atteindre rapidement le but demandé.", value: 0 },
-      { text: "Vous avez déjà une grande partie du projet en tête et vous demandez à l’IA d’organiser vos idées. Cela vous permet de garder votre idée de départ mais cela vous prend plus de temps.", value: 1 }
+      { text: "a) Vous utilisez l'IA pour générer des idées ou des ébauches (par exemple, en demandant à l'IA des slogans publicitaires), ce qui vous permet d’atteindre rapidement le but demandé.", value: 0 },
+      { text: "b) Vous avez déjà une grande partie du projet en tête et vous demandez à l’IA d’organiser vos idées. Cela vous permet de garder votre idée de départ mais cela vous prend plus de temps.", value: 1 }
     ]
   },
   {
     text: "✨ Extraordinaire ! L'IA produit un résultat qui correspond parfaitement à ce que vous attendiez pour une tâche, par exemple, une proposition de solution pour un problème récurrent. Vous êtes très satisfait.e.",
     answers: [
-      { text: "Vous êtes bluffé.e par la puissance de l’IA, sa fluidité d’interaction et vous vous empressez de montrer aux collègues ce que l’IA a produit comme réponse.", value: 0 },
-      { text: "Vous préférez évaluer le résultat d’abord en le mettant à l’épreuve même si cela prend plus de temps. Sait-on jamais que l’IA se serait trompée. Personne n’est infaillible après tout.", value: 1 }
+      { text: "a) Vous êtes bluffé.e par la puissance de l’IA, sa fluidité d’interaction et vous vous empressez de montrer aux collègues ce que l’IA a produit comme réponse.", value: 0 },
+      { text: "b) Vous préférez évaluer le résultat d’abord en le mettant à l’épreuve même si cela prend plus de temps. Sait-on jamais que l’IA se serait trompée. Personne n’est infaillible après tout.", value: 1 }
     ]
   },
   {
     text: "🔍 Vous rencontrez un problème d’organisation depuis très longtemps dans le service dans lequel vous travaillez et vous décidez de prendre le problème à bras le corps avec l’aide de l’IA :",
     answers: [
-      { text: "Vous demandez à l'IA une solution qui soit la plus efficace possible, puis vous vous concentrez sur la manière de l'intégrer directement dans votre processus de travail.", value: 0 },
-      { text: "Vous analysez le problème en profondeur par vous-même, en utilisant l'IA uniquement pour obtenir des perspectives ou des informations complémentaires.", value: 1 }
+      { text: "a) Vous demandez à l'IA une solution qui soit la plus efficace possible, puis vous vous concentrez sur la manière de l'intégrer directement dans votre processus de travail.", value: 0 },
+      { text: "b) Vous analysez le problème en profondeur par vous-même, en utilisant l'IA uniquement pour obtenir des perspectives ou des informations complémentaires.", value: 1 }
     ]
   },
   {
     text: "⏳ Vous avez une charge de travail très élevée, et l'IA vous permet de générer rapidement des ébauches de documents, vous faisant gagner un temps précieux.",
     answers: [
-      { text: "Vous utilisez le temps gagné pour une réflexion sur d'autres aspects du projet et vous assurer de la qualité supérieure du travail.", value: 1 },
-      { text: "Vous appréciez le gain de temps et vous vous concentrez sur l'achèvement rapide de la tâche, sans nécessairement approfondir d'autres aspects.", value: 0 }
+      { text: "a) Vous utilisez le temps gagné pour une réflexion sur d'autres aspects du projet et vous assurer de la qualité supérieure du travail.", value: 1 },
+      { text: "b) Vous appréciez le gain de temps et vous vous concentrez sur l'achèvement rapide de la tâche, sans nécessairement approfondir d'autres aspects.", value: 0 }
     ]
   }
 ];
@@ -120,42 +120,53 @@ let current = 0;
 let score = 0;
 let answers = [];
 
+function updateProgressBar() {
+  const percent = ((current) / questions.length) * 100;
+  let progressBar = document.getElementById('progress-bar');
+  progressBar.innerHTML = `
+    <div id="progress-bar-inner" style="width:${percent}%;"></div>
+  `;
+}
+
 function showQuestion(index) {
+  updateProgressBar();
+
   const quizDiv = document.getElementById('quiz');
   const q = questions[index];
+
   quizDiv.innerHTML = `
     <div class="question-text">${q.text}</div>
-    <form id="answers-form">
+    <div class="choice-row">
       ${q.answers.map((a, i) => `
-        <label class="checkbox-label">
-          <input type="checkbox" name="answer" value="${i}" class="checkbox-custom">
-          <span>${a.text}</span>
-        </label>
+        <div class="choice-block" data-index="${i}">${a.text}</div>
       `).join('')}
-      <button id="nextBtn" type="button" disabled>Suivant</button>
-      <div style="margin-top:18px;text-align:right;font-size:1.05em;color:#6777a7;">${index+1} / ${questions.length}</div>
-    </form>
+    </div>
+    <button id="nextBtn" type="button" disabled>Suivant</button>
+    <div style="margin-top:15px;text-align:right;font-size:1.04em;color:#6777a7;">
+      ${index+1} / ${questions.length}
+    </div>
   `;
 
-  // Sélection unique avec checkboxes custom
-  const checkboxes = quizDiv.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach(cb => {
-    cb.addEventListener('change', function() {
-      checkboxes.forEach(other => { if (other !== cb) other.checked = false; });
-      document.getElementById('nextBtn').disabled = !cb.checked;
+  let selected = null;
+  const cards = quizDiv.querySelectorAll('.choice-block');
+  cards.forEach(card => {
+    card.addEventListener('click', function() {
+      cards.forEach(c => c.classList.remove('selected'));
+      this.classList.add('selected');
+      selected = parseInt(this.getAttribute('data-index'));
+      document.getElementById('nextBtn').disabled = false;
     });
   });
 
   document.getElementById('nextBtn').onclick = function() {
-    let selectedIndex = -1;
-    checkboxes.forEach((cb, idx) => { if (cb.checked) selectedIndex = idx; });
-    if (selectedIndex !== -1) {
-      answers[index] = q.answers[selectedIndex].value;
-      score += q.answers[selectedIndex].value;
-      if (index < questions.length - 1) {
-        current++;
+    if (selected !== null) {
+      answers[index] = q.answers[selected].value;
+      score += q.answers[selected].value;
+      current++;
+      if (current < questions.length) {
         showQuestion(current);
       } else {
+        updateProgressBar(); // 100%
         showResult();
       }
     }
@@ -163,6 +174,10 @@ function showQuestion(index) {
 }
 
 function showResult() {
+  // Barre remplie à 100%
+  document.getElementById('progress-bar').innerHTML = `
+    <div id="progress-bar-inner" style="width:100%;"></div>
+  `;
   document.getElementById('quiz').style.display = "none";
   let profil = profils.find(p => p.condition(score));
   document.getElementById('result').innerHTML = `
@@ -189,5 +204,6 @@ function showResult() {
 }
 
 window.onload = function() {
+  current = 0; score = 0; answers = [];
   showQuestion(current);
 };
