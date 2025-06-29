@@ -1,123 +1,117 @@
 const questions = [
   {
-    text: "🧐 Vous venez d'utiliser un outil d'IA pour rédiger un résumé complexe. Quelques heures plus tard, un collègue vous demande une info clé de ce résumé.",
+    text: "🤔 Vous venez d'utiliser un outil d'IA pour rédiger un résumé détaillé d'un document complexe. Quelques heures plus tard, un collègue vous demande une information clé de ce résumé.",
     answers: [
-      { text: "Je me souviens facilement de l'information précise, comme si je l'avais écrite moi-même.", value: 1 },
-      { text: "J'ai du mal à me souvenir des détails, il faut que je relise ou consulte l'IA.", value: 0 }
+      { text: "Vous parvenez facilement à vous souvenir de la phrase exacte ou de l'information précise, comme si vous l'aviez écrite vous-même.", value: 1 },
+      { text: "Vous avez du mal à vous souvenir des détails exacts et sentez que vous auriez besoin de consulter à nouveau le résumé ou l'IA.", value: 0 }
     ]
   },
   {
-    text: "👏 Vous avez créé une présentation avec l'aide de l'IA. Quand on vous félicite, vous vous demandez si c'est vraiment votre travail…",
+    text: "👤 Vous avez créé une présentation avec l'aide substantielle d'une IA. Lorsque quelqu'un vous félicite pour votre travail, vous vous demandez à quel point le travail est réellement le vôtre ?",
     answers: [
-      { text: "Non, je me sens fier/fière, c'est avant tout mon œuvre !", value: 1 },
-      { text: "Oui, je me sens moins propriétaire, l'IA a fait beaucoup.", value: 0 }
+      { text: "Non car vous ressentez un fort sentiment d'appropriation et de fierté pour l'ensemble du travail, considérant que l'IA n'était qu'un outil à votre service, votre touche personnelle ayant primé sur l'apport de l'IA.", value: 1 },
+      { text: "Oui, vous avez un sentiment d'appartenance faible, attribuant une part significative, voire la majorité, du travail à l'IA (par exemple, vous pensez \"c'est surtout l'IA qui a tout fait, j'ai juste peaufiné\"), percevant l'œuvre comme moins originale.", value: 0 }
     ]
   },
   {
-    text: "🧑‍💼 Vous rédigez un document important et utilisez l’IA pour générer des ébauches ou sections entières.",
+    text: "📝 Vous êtes en train de rédiger un document important et décidez d'utiliser une IA pour générer les premières ébauches ou des sections entières.",
     answers: [
-      { text: "Je supervise, affine et dirige vraiment le travail de l’IA.", value: 1 },
-      { text: "Je laisse l’IA faire presque tout, je ne fais que corriger.", value: 0 }
+      { text: "Votre rôle principal passe de l'exécution de l'écriture à la supervision, à la direction et à l'affinage constant du résultat de l'IA. Par exemple, en posant des questions de clarification, en demandant des reformulations spécifiques, en guidant l'IA vers des sources de données précises.", value: 1 },
+      { text: "Vous laissez l'IA s'occuper de la majeure partie de la rédaction percevant l'IA comme un substitut majeur à votre travail d'exécution. Les activités d'analyse, de synthèse et d'évaluation exigent maintenant moins d'effort grâce à l’IA.", value: 0 }
     ]
   },
   {
-    text: "💡 On attend de vous une idée créative ou innovante (campagne, concept…).",
+    text: "🎨 On vous demande de produire une idée qui se veut particulièrement créative ou innovante, par exemple, un concept pour une nouvelle campagne de publicité.",
     answers: [
-      { text: "Je demande directement à l’IA des idées toutes faites.", value: 0 },
-      { text: "J’ai mes propres idées et j’utilise l’IA pour organiser.", value: 1 }
+      { text: "Vous utilisez l'IA pour générer des idées ou des ébauches (par exemple, en demandant à l'IA des slogans publicitaires), ce qui vous permet d’atteindre rapidement le but demandé.", value: 0 },
+      { text: "Vous avez déjà une grande partie du projet en tête et vous demandez à l’IA d’organiser vos idées. Cela vous permet de garder votre idée de départ mais cela vous prend plus de temps.", value: 1 }
     ]
   },
   {
-    text: "🤩 L’IA propose une solution qui colle parfaitement à ce que vous attendiez pour une tâche.",
+    text: "✨ Extraordinaire ! L'IA produit un résultat qui correspond parfaitement à ce que vous attendiez pour une tâche, par exemple, une proposition de solution pour un problème récurrent. Vous êtes très satisfait.e.",
     answers: [
-      { text: "Bluffé(e), je montre tout de suite le résultat à mes collègues !", value: 0 },
-      { text: "Je préfère d'abord vérifier et tester le résultat, on ne sait jamais.", value: 1 }
+      { text: "Vous êtes bluffé.e par la puissance de l’IA, sa fluidité d’interaction et vous vous empressez de montrer aux collègues ce que l’IA a produit comme réponse.", value: 0 },
+      { text: "Vous préférez évaluer le résultat d’abord en le mettant à l’épreuve même si cela prend plus de temps. Sait-on jamais que l’IA se serait trompée. Personne n’est infaillible après tout.", value: 1 }
     ]
   },
   {
-    text: "🔎 Vous prenez à bras le corps un problème d’organisation de longue date dans votre service grâce à l’IA.",
+    text: "🔍 Vous rencontrez un problème d’organisation depuis très longtemps dans le service dans lequel vous travaillez et vous décidez de prendre le problème à bras le corps avec l’aide de l’IA :",
     answers: [
-      { text: "Je demande la solution la plus efficace à l’IA et je l’applique direct.", value: 0 },
-      { text: "J’analyse moi-même, l’IA ne sert qu’à compléter mon analyse.", value: 1 }
+      { text: "Vous demandez à l'IA une solution qui soit la plus efficace possible, puis vous vous concentrez sur la manière de l'intégrer directement dans votre processus de travail.", value: 0 },
+      { text: "Vous analysez le problème en profondeur par vous-même, en utilisant l'IA uniquement pour obtenir des perspectives ou des informations complémentaires.", value: 1 }
     ]
   },
   {
-    text: "⏰ Grosse charge de travail : l’IA vous fait gagner un temps précieux pour rédiger.",
+    text: "⏳ Vous avez une charge de travail très élevée, et l'IA vous permet de générer rapidement des ébauches de documents, vous faisant gagner un temps précieux.",
     answers: [
-      { text: "Je profite du temps gagné pour réfléchir plus loin et améliorer mon travail.", value: 1 },
-      { text: "Je passe vite à la tâche suivante, priorité à l’efficacité !", value: 0 }
+      { text: "Vous utilisez le temps gagné pour une réflexion sur d'autres aspects du projet et vous assurer de la qualité supérieure du travail.", value: 1 },
+      { text: "Vous appréciez le gain de temps et vous vous concentrez sur l'achèvement rapide de la tâche, sans nécessairement approfondir d'autres aspects.", value: 0 }
     ]
   }
 ];
 
 const profils = [
   {
-    // Profil le moins bon : EN ROUGE
-    title: "Profil IA Assisté·e / Dépendant·e 😬",
-    condition: score => score <= 2,
-    color: "#ffeded",
-    border: "#e53935",
+    title: "Utilisateur·trice IA Assisté·e / Dépendant·e 😬",
+    color: "#ffeaea",
+    border: "#c62828",
     explanation: `
-      <p style="margin-bottom:18px;">
-        <b>Vous laissez l’IA penser, mémoriser et décider pour vous.</b>
-        Dans votre quotidien, l’IA est devenue une sorte de “pilote automatique” : elle rédige, structure, synthétise, parfois sans que vous relisiez attentivement ni questionniez le résultat.
-      </p>
-      <p style="margin-bottom:18px;">
-        Cela peut sembler confortable sur le moment, mais à terme, cela fragilise votre mémoire, votre esprit critique et votre capacité à défendre vos idées.  
-        <b>Votre créativité et votre autonomie peuvent s’atrophier.</b>
-      </p>
-      <p style="font-weight:bold;">Conseils personnalisés pour vous :</p>
-      <ul style="text-align:left; margin-bottom:20px;">
-        <li>Essayez de reformuler chaque réponse de l’IA à votre façon, même brièvement.</li>
-        <li>Prenez le temps de <b>vérifier</b> ce que propose l’IA : un clic de plus, une erreur de moins !</li>
-        <li>Faites confiance à vos intuitions : osez d’abord réfléchir seul·e, puis seulement confronter votre point de vue à l’IA.</li>
-      </ul>
-      <p style="color:#b71c1c;"><b>Astuce :</b> Réservez-vous une tâche par jour “100% sans IA” pour muscler votre autonomie, comme on entretient un muscle !</p>
+      <div style="font-size:1.13em;margin-bottom:15px;">
+        <b>Vous déléguez beaucoup à l’IA.</b> À force de lui confier vos tâches cognitives, votre mémoire, votre sens critique et votre implication risquent de s’émousser. À court terme, c’est pratique ; à long terme, cela peut fragiliser votre capacité à défendre vos idées et à penser de façon autonome.
+      </div>
+      <div style="margin-bottom:13px;">
+        <b>Pour progresser :</b>
+        <ul style="text-align:left; margin-top:6px;">
+          <li>Reformulez systématiquement les réponses de l’IA avec vos propres mots.</li>
+          <li>Avant de demander à l’IA, essayez de réfléchir seul·e à la question.</li>
+          <li>Consacrez chaque jour une tâche “sans IA” pour entraîner votre réflexion personnelle.</li>
+        </ul>
+      </div>
+      <div style="margin-top:20px; font-style:italic; color:#c62828;">
+        Conseil bonus : La meilleure façon d’apprendre d’un outil, c’est de rester plus fort·e que lui !
+      </div>
     `
   },
   {
-    // Profil moyen : EN BLEU
-    title: "Profil IA Collaboratif / Équilibré 🤝",
-    condition: score => score <= 4,
+    title: "Utilisateur·trice IA Équilibré·e / Collaboratif·ve 🤝",
     color: "#e3f2fd",
     border: "#1976d2",
     explanation: `
-      <p style="margin-bottom:18px;">
-        <b>Bravo : vous savez tirer profit de l’IA… sans pour autant lui déléguer toute votre réflexion !</b>
-      </p>
-      <p style="margin-bottom:18px;">
-        Vous gagnez du temps, exploitez la puissance de l’IA pour la production et l’organisation, mais vous gardez globalement la main sur les choix et la vérification. Parfois, vous faites totalement confiance ; parfois, vous vérifiez ou retravaillez : c’est l’équilibre d’un·e utilisateur·trice “malin·e”.
-      </p>
-      <p style="font-weight:bold;">Conseils pour progresser encore :</p>
-      <ul style="text-align:left; margin-bottom:20px;">
-        <li>Réinvestissez une partie du temps gagné pour <b>apprendre de nouvelles choses</b> (pas seulement boucler vos tâches plus vite).</li>
-        <li>Challengez régulièrement les réponses de l’IA, surtout si elles vous paraissent “parfaites”.</li>
-        <li>Discutez avec d’autres de vos usages de l’IA, pour enrichir vos méthodes !</li>
-      </ul>
-      <p style="color:#1a237e;"><b>Astuce :</b> Testez de nouvelles formes d’IA (générateurs d’images, d’audio…) pour diversifier vos réflexes et sortir du “pilotage automatique”.</p>
+      <div style="font-size:1.13em;margin-bottom:15px;">
+        <b>Vous exploitez l’IA comme partenaire</b> : elle vous fait gagner du temps, vous inspire, mais vous gardez un rôle actif. Vous vérifiez, complétez, déléguez à bon escient. Cet équilibre protège votre esprit critique tout en bénéficiant de l’efficacité offerte par l’IA.
+      </div>
+      <div style="margin-bottom:13px;">
+        <b>Pour aller plus loin :</b>
+        <ul style="text-align:left; margin-top:6px;">
+          <li>Réinvestissez le temps gagné pour apprendre ou explorer de nouvelles solutions.</li>
+          <li>Challengez parfois les réponses de l’IA (demandez des alternatives ou des explications).</li>
+          <li>Partagez vos méthodes avec d’autres pour enrichir vos usages !</li>
+        </ul>
+      </div>
+      <div style="margin-top:20px; font-style:italic; color:#1976d2;">
+        Conseil bonus : Variez les usages de l’IA pour garder votre curiosité active.
+      </div>
     `
   },
   {
-    // Profil le meilleur : EN VERT
-    title: "Profil IA Autonome / Esprit critique 🏆",
-    condition: score => score <= 7,
+    title: "Utilisateur·trice IA Autonome / Esprit Critique 🏆",
     color: "#e7fbe7",
     border: "#388e3c",
     explanation: `
-      <p style="margin-bottom:18px;">
-        <b>Félicitations ! Vous utilisez l’IA comme un·e vrai·e pro : elle ne remplace jamais votre réflexion, elle l’amplifie.</b>
-      </p>
-      <p style="margin-bottom:18px;">
-        Vous vérifiez, vous recoupez, vous restez créatif·ve, et vous n’hésitez pas à remettre en question les suggestions de l’IA.  
-        Vous faites de chaque interaction un apprentissage : c’est vous qui décidez, pas la machine !
-      </p>
-      <p style="font-weight:bold;">Conseils pour garder le cap :</p>
-      <ul style="text-align:left; margin-bottom:20px;">
-        <li>Partagez vos méthodes avec votre équipe : devenez un·e ambassadeur·rice d’une IA responsable !</li>
-        <li>Gardez votre curiosité vivante, explorez des IA d’autres domaines (créativité, analyse, organisation, etc.).</li>
-        <li>Faites des pauses régulières pour laisser émerger vos propres idées avant de consulter l’IA.</li>
-      </ul>
-      <p style="color:#176634;"><b>Astuce :</b> Notez chaque semaine ce que l’IA vous a permis d’apprendre… et ce que vous avez appris SANS elle. Le combo est imbattable !</p>
+      <div style="font-size:1.15em;margin-bottom:17px;">
+        <b>Félicitations !</b> Vous utilisez l’IA comme un·e pro : elle ne remplace jamais votre réflexion, elle la complète et la stimule. Vous contrôlez, questionnez, vérifiez : la décision finale vous appartient toujours.
+      </div>
+      <div style="margin-bottom:13px;">
+        <b>Pour continuer sur cette lancée :</b>
+        <ul style="text-align:left; margin-top:6px;">
+          <li>Transmettez vos réflexes critiques à votre entourage : soyez un·e ambassadeur·rice de l’IA responsable.</li>
+          <li>Testez de nouveaux outils IA, pour rester à la pointe tout en gardant votre discernement.</li>
+          <li>Ne négligez jamais la relecture humaine, même après une proposition parfaite de l’IA.</li>
+        </ul>
+      </div>
+      <div style="margin-top:20px; font-style:italic; color:#388e3c;">
+        Conseil bonus : Faites de l’IA une source d’inspiration… mais continuez à penser librement !
+      </div>
     `
   }
 ];
@@ -130,7 +124,7 @@ function showQuestion(index) {
   const quizDiv = document.getElementById('quiz');
   const q = questions[index];
   quizDiv.innerHTML = `
-    <div class="question-text" style="font-size:1.21em; margin-bottom:28px;">${q.text}</div>
+    <div class="question-text">${q.text}</div>
     <form id="answers-form">
       ${q.answers.map((a, i) => `
         <label class="checkbox-label">
@@ -139,7 +133,7 @@ function showQuestion(index) {
         </label>
       `).join('')}
       <button id="nextBtn" type="button" disabled>Suivant</button>
-      <div style="margin-top:20px;text-align:right;font-size:1.06em;color:#6777a7;">${index+1} / ${questions.length}</div>
+      <div style="margin-top:18px;text-align:right;font-size:1.05em;color:#6777a7;">${index+1} / ${questions.length}</div>
     </form>
   `;
 
@@ -174,21 +168,21 @@ function showResult() {
   document.getElementById('result').innerHTML = `
     <div style="
       background:${profil.color};
-      border:2.7px solid ${profil.border};
-      border-radius:18px;
-      box-shadow:0 2px 18px #e1e2ea;
-      margin:18px 0 0 0;
-      padding:34px 24px 30px 24px;
+      border:2.5px solid ${profil.border};
+      border-radius:15px;
+      box-shadow:0 2px 12px #e1e2ea;
+      margin:20px 0 0 0;
+      padding:36px 20px 30px 20px;
       max-width:650px;
       margin-left:auto;margin-right:auto;
     ">
-      <div class="profil-title" style="color:${profil.border};font-size:1.3em;margin-bottom:19px;">${profil.title}</div>
+      <div class="profil-title" style="color:${profil.border};font-size:1.25em;margin-bottom:19px;">${profil.title}</div>
       ${profil.explanation}
       <div style="text-align:center;">
-        <button style="margin-top:32px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button>
+        <button style="margin-top:30px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button>
       </div>
     </div>
-    <div style="margin-top:25px;color:#909090;font-size:1em;text-align:center;">
+    <div style="margin-top:23px;color:#909090;font-size:1em;text-align:center;">
       Score final : <b>${score}</b> / 7
     </div>
   `;
