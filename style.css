@@ -8,43 +8,84 @@ body {
 
 #app {
   max-width: 740px;
-  margin: 34px auto 0 auto;
-  padding: 0 40px 36px 40px; /* 40px à gauche/droite, 36px en bas */
+  margin: 38px auto 0 auto;
+  padding: 0 42px 40px 42px;
   background: #fff;
-  border-radius: 22px;
-  box-shadow: 0 4px 28px #e1e6f0;
-  min-height: 650px;
+  border-radius: 28px;
+  box-shadow: 0 6px 36px #e0e8f8, 0 2px 4px #e3e3f1;
+  min-height: 660px;
   word-break: break-word;
   hyphens: auto;
 }
 
-/* TITRE */
 h1 {
   text-align: center;
-  font-size: 2.1em;
+  font-size: 2.25em;
   letter-spacing: 0.7px;
-  margin: 34px 0 10px 0;
-  font-weight: 700;
-  color: #1846a1; /* bleu foncé */
+  margin: 42px 0 12px 0;
+  font-weight: 800;
+  color: #1846a1;
+  background: linear-gradient(87deg, #1846a1 65%, #428fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Sous-titre */
 .subtitle {
   text-align: center;
-  font-size: 1.32em;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #3d4350;
-  max-width: 100%;
+  font-size: 1.36em;
+  font-weight: 700;
+  margin: 0 auto 22px auto;
+  color: #232537;
+  letter-spacing: 0.2px;
+  max-width: 90%;
+}
+
+#app .entry-content {
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto 28px auto;
+  color: #233;
+  font-size: 1.09em;
+  line-height: 1.58;
+  background: rgba(255,255,255,0.95);
+  border-radius: 14px;
+  padding: 0 0 2px 0;
+}
+
+#app button#startBtn,
+#app button#nextBtn {
+  display: block;
+  margin: 40px auto 0 auto;
+  padding: 15px 52px;
+  font-size: 1.17em;
+  font-weight: 800;
+  background: linear-gradient(90deg, #1ed37b 0%, #37c491 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 3px 16px #e2fbe6, 0 1px 5px #e3ece6;
+  letter-spacing: 0.25px;
+  transition: background 0.16s, transform 0.12s;
+}
+button[disabled] {
+  opacity: 0.47;
+  cursor: not-allowed;
+}
+#app button#startBtn:hover,
+#app button#nextBtn:hover {
+  background: linear-gradient(90deg, #22e887 0%, #11ba78 100%);
+  transform: translateY(-2px) scale(1.03);
 }
 
 #progress-bar {
   width: 100%;
   max-width: 740px;
-  margin: 24px auto 30px auto;
-  height: 26px;
+  margin: 24px auto 32px auto;
+  height: 28px;
   background: #e3f4e1;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 5px #e7f3eb;
   display: block;
@@ -53,13 +94,14 @@ h1 {
 #progress-bar-inner {
   background: linear-gradient(90deg, #22b664 0%, #62e888 100%);
   height: 100%;
-  border-radius: 14px 0 0 14px;
+  border-radius: 16px 0 0 16px;
   transition: width 0.32s cubic-bezier(.71,.13,.33,.88);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Question/choix */
 .question-illustration {
   width: 100%;
   height: 380px;
@@ -70,12 +112,12 @@ h1 {
 }
 
 .question-text {
-  font-size: 1.28em;
+  font-size: 1.26em;
   font-weight: 500;
   margin-bottom: 34px;
   margin-top: 8px;
   text-align: justify;
-  line-height: 1.38;
+  line-height: 1.39;
   color: #232537;
   max-width: 100%;
   word-break: break-word;
@@ -84,15 +126,15 @@ h1 {
 
 .choice-row {
   display: flex;
-  gap: 28px;
+  gap: 30px;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 42px;
 }
 
 .choice-block {
   flex: 1 1 0;
   background: #f1f5fc;
-  padding: 30px 26px 28px 26px;
+  padding: 32px 26px 30px 26px;
   border-radius: 16px;
   font-size: 1.13em;
   font-weight: 400;
@@ -100,114 +142,114 @@ h1 {
   box-shadow: 0 2px 10px #f1f1f9;
   border: 2.5px solid transparent;
   cursor: pointer;
-  transition: border-color 0.16s, background 0.16s, color 0.16s;
+  transition: border-color 0.16s, background 0.16s, color 0.16s, box-shadow 0.13s;
   text-align: justify;
   max-width: 100%;
   word-break: break-word;
   hyphens: auto;
+  position: relative;
 }
-
 .choice-block.selected {
   background: #2356aa;
   color: #fff;
   border: 2.5px solid #2e7cf6;
-}
-
-button#nextBtn, button#startBtn {
-  display: block;
-  margin: 34px auto 0 auto;
-  padding: 13px 44px;
-  font-size: 1.13em;
-  font-weight: 700;
-  background: linear-gradient(90deg, #1ed37b 0%, #37c491 100%);
-  color: #fff;
-  border: none;
-  border-radius: 9px;
-  cursor: pointer;
-  box-shadow: 0 1px 5px #e4f5ed;
-  letter-spacing: 0.2px;
-  transition: background 0.16s;
-}
-button[disabled] {
-  opacity: 0.47;
-  cursor: not-allowed;
+  box-shadow: 0 2px 24px #b2cff2;
 }
 
 #result {
-  margin-top: 34px;
+  margin-top: 36px;
   margin-bottom: 0;
 }
 
-/* --------------------------- PROFIL : PLUS AÉRÉ --------------------------- */
-
-/* Grand encadré résultat */
+/* Bloc résultat principal */
 #result > div[style*="background"] {
-  margin-bottom: 38px !important;
-  padding-top: 36px !important;
+  margin-bottom: 42px !important;
+  padding-top: 39px !important;
   padding-bottom: 28px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
 /* Description principale */
 #result div[style*="font-size:1.16em; margin-bottom:24px; text-align:justify;"] {
-  margin-bottom: 38px !important;
-  line-height: 1.66 !important;
+  margin-bottom: 42px !important;
+  line-height: 1.68 !important;
 }
 
-/* Séparateurs titres Points/Pistes */
+/* TITRES points/pistes */
 #result div[style*="font-size:1.13em"] {
   margin-bottom: 22px !important;
-  margin-top: 2px !important;
+  margin-top: 3px !important;
   letter-spacing: 0.1px;
 }
 
-/* Listes plus aérées dans les profils */
+/* -- POINTS D'ATTENTION ORANGE -- */
+#result .bloc-orange,
+#result div[style*="background: #fff6eb"], /* compatibilité inline */
+#result div[style*="background: #fff7e6"] {
+  background: #fff3e4 !important;
+  border: 1.5px solid #ffc48b !important;
+  border-radius: 11px;
+  padding: 26px 19px 20px 19px !important;
+  margin-bottom: 36px !important;
+}
+
+#result div[style*="background: #eefbee"], /* SÉPARÉ les pistes vertes */
+#result div[style*="background: #f7fcf6"] {
+  margin-top: 44px !important;
+  margin-bottom: 39px !important;
+  border-radius: 11px;
+  padding: 26px 19px 20px 19px !important;
+}
+
+/* Listes dans les profils */
 #result ul {
-  margin-bottom: 32px !important;
+  margin-bottom: 33px !important;
   margin-top: 20px !important;
   padding-left: 34px !important;
 }
 
 #result li {
-  margin-bottom: 19px !important;
-  line-height: 1.6 !important;
+  margin-bottom: 22px !important;
+  line-height: 1.64 !important;
 }
 
 /* Encadrés d'exemple */
 #result div[style*="color:#c62828"],
 #result div[style*="color:#1976d2"],
 #result div[style*="color:#388e3c"] {
-  margin-top: 11px !important;
-  margin-bottom: 20px !important;
-  padding-left: 20px !important;
-  font-size: 1.02em !important;
-  opacity: 0.93;
-  line-height: 1.5 !important;
+  margin-top: 13px !important;
+  margin-bottom: 24px !important;
+  padding-left: 24px !important;
+  font-size: 1.06em !important;
+  opacity: 0.94;
+  line-height: 1.52 !important;
 }
 
+/* Plus d'espace entre les blocs */
 #result > div[style*="background"] + div[style*="background"] {
-  margin-top: 42px !important;
+  margin-top: 46px !important;
 }
 
-/* Espacement vertical après le titre du profil */
+/* Grand titre profil */
 #result > div > div[style*="font-size:2em;"] {
-  margin-bottom: 26px !important;
+  margin-bottom: 31px !important;
 }
 
-/* Espace entre score et fiche profil */
 #result > div[style*="text-align:center; margin-bottom:24px;"] {
-  margin-bottom: 37px !important;
+  margin-bottom: 39px !important;
 }
 
-/* Pour éviter toute compacité sur très grands écrans */
-@media (min-width: 1200px) {
-  #app {
-    max-width: 800px;
-    padding-left: 54px;
-    padding-right: 54px;
-  }
+/* Crédit et licence */
+#app .credit {
+  margin-top: 50px;
+  margin-bottom: 6px;
+  font-size: 0.92em;
+  color: #b0b7bc;
+  text-align: center;
+  letter-spacing: 0.04em;
 }
-
-/* --------------------------------- FIN PROFIL ---------------------------- */
+#app .credit a { color: #3773ad; }
 
 hr {
   border: none;
@@ -220,25 +262,18 @@ a {
   text-decoration: underline;
 }
 
-ul {
-  padding-left: 26px;
-  margin-top: 6px;
-  margin-bottom: 14px;
-}
-
-li {
-  margin-bottom: 7px;
-}
-
-@media print {
-  body {
-    background: #fff;
-  }
+/* Responsive desktop large */
+@media (min-width: 1200px) {
   #app {
-    box-shadow: none;
-    border-radius: 0;
+    max-width: 800px;
+    padding-left: 58px;
+    padding-right: 58px;
   }
-  #progress-bar {
-    display: none !important;
-  }
+}
+
+/* Désactive les prints inutiles */
+@media print {
+  body { background: #fff; }
+  #app { box-shadow: none; border-radius: 0; }
+  #progress-bar { display: none !important; }
 }
