@@ -58,7 +58,6 @@ const questions = [
 ];
 
 const profils = [
-  // 0-2 points : Explorateur Insouciant
   {
     title: "L'Explorateur Insouciant de l'IA",
     color: "#ffeaea",
@@ -137,7 +136,6 @@ const profils = [
       </div>
     `
   },
-  // 3-4 points : Le Stratège de l'IA
   {
     title: "Le Stratège de l'IA",
     color: "#e3f2fd",
@@ -210,7 +208,6 @@ const profils = [
       </div>
     `
   },
-  // 5-7 points : Le Maître de l'Esprit Critique Augmenté par l'IA
   {
     title: "Le Maître de l'Esprit Critique Augmenté par l'IA",
     color: "#e7fbe7",
@@ -221,7 +218,7 @@ const profils = [
       </div>
       <div style="font-size:1.16em; margin-bottom:24px; text-align:justify;">
         <b>Description :</b><br>
-        Vous démontrez un niveau élevé d'engagement cognitif, de pensée critique et d'autonomie. Vous percevez l'IA comme un outil d'augmentation de vos propres capacités, en l'utilisant stratégiquement pour approfondir votre compréhension et générer des idées originales, tout en maintenant un sens aigu de la propriété et de la responsabilité de votre travail. Votre confiance en vos compétences vous pousse à davantage d'engagement critique.
+        Vous démontrez un niveau élevé d'engagement cognitif, de pensée critique et d'autonomie. Vous percevez l'IA comme un outil d'augmentation de vos propres capacités, en l'utilisant stratégiquement pour approfondir votre compréhension et générer des idées originales, tout en maintenant un sens aigu de la propriété et de la responsabilité de votre travail. Votre confiance en vos propres compétences vous pousse à davantage d'engagement critique.
       </div>
       <div style="font-size:1.16em; margin-bottom:24px; text-align:justify;">
         <b>Points d'attention :</b>
@@ -239,13 +236,13 @@ const profils = [
             </div>
           </li>
           <li>
-            • <b>Éviter l'atrophie des compétences</b> : Veiller à ce que l'utilisation de l'IA ne conduise pas à une "atrophie des compétences" dans des tâches comme le brainstorming et la résolution de problèmes, en maintenant un exercice actif des circuits neuronaux pour le contrôle exécutif et la génération d'idées.
+            • <b>Éviter l'atrophie des compétences</b> : Veillez à ce que l'utilisation de l'IA ne conduise pas à une "atrophie des compétences" dans des tâches comme le brainstorming et la résolution de problèmes, en maintenant un exercice actif des circuits neuronaux pour le contrôle exécutif et la génération d'idées.
             <div style="color:#388e3c;font-size:0.97em;margin:6px 0 12px 0;padding-left:18px;">
               Exemple : vous rédigez une partie du texte sans IA avant de comparer avec sa version.
             </div>
           </li>
           <li>
-            • <b>Détecter le "style IA"</b> : Continuer à développer une capacité à identifier les éléments stylistiques homogènes et génériques souvent présents dans les contenus générés par l'IA, même si l'IA s'améliore.
+            • <b>Détecter le "style IA"</b> : Continuez à développer une capacité à identifier les éléments stylistiques homogènes et génériques souvent présents dans les contenus générés par l'IA, même si l'IA s'améliore.
             <div style="color:#388e3c;font-size:0.97em;margin:6px 0 12px 0;padding-left:18px;">
               Exemple : vous réécrivez une phrase trop lisse ou banale générée par l’IA pour y injecter votre style.
             </div>
@@ -284,7 +281,6 @@ const profils = [
     `
   }
 ];
-
 
 let current = -1;
 let score = 0;
@@ -337,7 +333,7 @@ function render() {
   if (current < questions.length) {
     const q = questions[current];
     document.getElementById('app').innerHTML = `
-      <img src="${q.img}" alt="" class="question-illustration" loading="lazy">
+      <img src="${q.img}" alt="" class="question-illustration" loading="lazy" width="700" height="400">
       <div class="question-text">${q.text}</div>
       <div class="choice-row">
         ${q.answers.map((a, i) => `
@@ -345,9 +341,6 @@ function render() {
         `).join('')}
       </div>
       <button id="nextBtn" type="button" disabled>Suivant</button>
-      <div style="margin-top:15px;text-align:right;font-size:1.04em;color:#6777a7;">
-        ${current+1} / ${questions.length}
-      </div>
     `;
 
     let selected = null;
@@ -374,7 +367,6 @@ function render() {
 
   if (current === questions.length) {
     progressBar.style.display = 'none';
-
     const percentScore = Math.round((score / questions.length) * 100);
     let profil;
     if (score >= 5) profil = profils[2];
@@ -436,4 +428,4 @@ function render() {
 window.onload = function() {
   current = -1;
   render();
-}
+};
