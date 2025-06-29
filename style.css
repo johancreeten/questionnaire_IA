@@ -28,7 +28,7 @@ h1 {
 .intro-expl {
   font-size: 1.08em;
   color: #46545a;
-  text-align: center;
+  text-align: justify;
   margin-bottom: 36px;
   margin-top: 0;
   line-height: 1.45;
@@ -42,12 +42,23 @@ h1 {
   overflow: hidden;
   box-shadow: 0 1px 8px #e3e8f7 inset;
   position: relative;
+  display: none;
 }
 #progress-bar-inner {
   height: 100%;
   background: linear-gradient(90deg, #43ea77 0%, #11bb46 100%);
   border-radius: 11px 0 0 11px;
   transition: width 0.35s cubic-bezier(.68,-0.55,.27,1.55);
+}
+img.question-illustration {
+  display: block;
+  max-width: 110px;
+  max-height: 110px;
+  margin: 0 auto 25px auto;
+  border-radius: 12px;
+  box-shadow: 0 1px 8px #dde5f1;
+  object-fit: cover;
+  background: #f6f9fc;
 }
 .choice-row {
   display: flex;
@@ -63,7 +74,7 @@ h1 {
   border-radius: 13px;
   padding: 23px 18px;
   font-size: 1.13em;
-  text-align: left;
+  text-align: justify;
   cursor: pointer;
   transition: 
     background 0.22s, 
@@ -114,6 +125,7 @@ button:not(:disabled) {
   font-size: 1.19em;
   margin-bottom: 32px;
   font-weight: 600;
+  text-align: justify;
 }
 @media (max-width: 700px) {
   .container { padding: 12px 1vw; }
@@ -121,4 +133,8 @@ button:not(:disabled) {
   .choice-row { flex-direction: column; gap: 18px; }
   .choice-block { font-size: 1em; }
   #progress-bar { height: 12px; }
+}
+a {
+  color: #388e3c;
+  text-decoration: underline;
 }
