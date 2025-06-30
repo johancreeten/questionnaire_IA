@@ -271,10 +271,15 @@ function showIntro() {
 function renderQuestion(index) {
   showSection('quiz-section');
   const progressBar = document.getElementById('progress-bar');
-  if (progressBar) {
-    const percent = Math.round(((index + 1) / questions.length) * 100);
-    progressBar.innerHTML = `<div style="width:${percent}%;"></div>`;
-  }
+if (progressBar) {
+  const percent = Math.round(((index + 1) / questions.length) * 100);
+  progressBar.innerHTML = `
+    <div class="progress-bar-inner" style="width:${percent}%">
+      <span class="progress-percent">${percent}%</span>
+    </div>
+  `;
+}
+
   const quizSection = document.getElementById('quiz-section');
   quizSection.innerHTML = '';
 
