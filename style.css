@@ -15,7 +15,6 @@ body {
   overflow: hidden;
   border-radius: 4px;
 }
-
 #progress-bar > div {
   background: #284ba8;
   height: 100%;
@@ -36,7 +35,6 @@ body {
   flex-direction: column;
   align-items: stretch;
   min-height: 62vh;
-  /* pour éviter que ce soit trop écrasé */
 }
 
 @media (max-width: 900px) {
@@ -49,21 +47,44 @@ body {
   }
 }
 
-/* Titres et textes */
-h1, h2, h3 {
+/* TITRE EN BLEU */
+.titre-bleu {
+  color: #284ba8;
+  font-size: 2.15em;
+  font-weight: 800;
   margin-top: 0;
+  margin-bottom: 0.75em;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Texte d'intro personnalisé */
+.intro-texte {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  font-size: 1.16em;
+  line-height: 1.55;
+}
+
+.intro-texte em {
+  display: block;
+  font-style: italic;
+  color: #6370a4;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-size: 0.99em;
+}
+
+h1, h2, h3 {
   font-family: inherit;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
 
-h1 {
-  font-size: 2.15em;
-}
-
 h2 {
   font-size: 1.35em;
+  margin-top: 0.5em;
 }
 
 p, li, label, span, .option-label {
@@ -96,17 +117,14 @@ button, .choice-button {
 button:active, .choice-button:active {
   background: #19306e;
 }
-
 button:focus, .choice-button:focus {
   outline: 2px solid #203e87;
 }
-
 .choice-button.selected, .choice-button.active {
   background: #e0e8ff;
   color: #284ba8;
   box-shadow: 0 0 0 2px #284ba8;
 }
-
 input[type="radio"], input[type="checkbox"] {
   margin-right: 0.8em;
   accent-color: #284ba8;
@@ -149,6 +167,8 @@ section.active {
     padding: 4vw 1vw;
     font-size: clamp(14px, 5vw, 18px);
   }
+  h1 { font-size: 1.5em; }
+  h2 { font-size: 1.12em; }
 }
 
 ::-webkit-scrollbar {
@@ -181,13 +201,11 @@ section.active {
   box-shadow: none;
   transition: background 0.13s, border 0.13s, color 0.13s;
 }
-
 .choice-button.selected, .choice-button.active {
   background: #dbeaff;
   color: #19306e;
   border: 2px solid #284ba8;
 }
-
 .choice-button input[type="radio"] {
   accent-color: #284ba8;
 }
