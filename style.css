@@ -156,6 +156,13 @@ li,
   margin-top: 10px;
 }
 
+/* Interligne après chaque exemple dans les listes de résultats */
+.bloc-orange li > div {
+  margin-top: 6px;
+  margin-bottom: 18px;
+  display: block;
+}
+
 p, li, label, span, .option-label {
   color: #1f2f46;
   font-size: 1em;
