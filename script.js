@@ -386,17 +386,7 @@ function showResult() {
   scoreDiv.textContent = `${percentScore}%`;
   resultSection.appendChild(scoreDiv);
 
-  // Titre du profil
-  const titre = document.createElement('div');
-  titre.innerHTML = profil.title;
-  titre.style.textAlign = "center";
-  titre.style.marginBottom = "18px";
-  titre.style.fontSize = "2em";
-  titre.style.fontWeight = "700";
-  titre.style.color = profil.border;
-  resultSection.appendChild(titre);
-
-  // Bloc explication du profil
+   // Bloc explication du profil
   const bloc = document.createElement('div');
   bloc.innerHTML = profil.explanation;
   resultSection.appendChild(bloc);
