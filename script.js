@@ -257,31 +257,47 @@ let userAnswers = [];
 function showSection(sectionId) {
   document.querySelectorAll('.main-container section').forEach(section => {
     section.classList.remove('active');
+    section.style.display = "none";
   });
   const target = document.getElementById(sectionId);
-  if (target) target.classList.add('active');
+  if (target) {
+    target.classList.add('active');
+    target.style.display = "block";
+  }
 }
 
 // === 4. Affichage de l'intro ===
 function showIntro() {
   showSection('intro-section');
+  // Jauge remise à 0
+  updateProgressBar(0, questions.length);
+  // Ajoute le crédit si pas déjà là
+  const introSection = document.getElementById('intro-section');
+  if (introSection && !introSection.querySelector('.credit')) {
+    const startBtn = introSection.querySelector('#start-btn');
+    if (startBtn) {
+      const creditDiv = createCreditDiv();
+      startBtn.insertAdjacentElement('afterend', creditDiv);
+    }
+  }
 }
 
-// === 5. Affichage d'une question ===
-function renderQuestion(index) {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-  showSection('quiz-section');
+// === 5. Fonction pour la barre de progression ===
+function updateProgressBar(index, total, isResult = false) {
   const progressBar = document.getElementById('progress-bar');
-if (progressBar) {
-  // Calcul : "index" questions répondues sur "questions.length"
-  const percent = Math.round((index / questions.length) * 100);
+  let percent = isResult ? 100 : Math.round((index / total) * 100);
   progressBar.innerHTML = `
     <div class="progress-bar-inner" style="width:${percent}%">
       <span class="progress-percent">${percent}%</span>
     </div>
   `;
 }
-}
+
+// === 6. Affichage d'une question ===
+function renderQuestion(index) {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  showSection('quiz-section');
+  updateProgressBar(index, questions.length);
 
   const quizSection = document.getElementById('quiz-section');
   quizSection.innerHTML = '';
@@ -355,11 +371,18 @@ if (progressBar) {
   });
 
   quizSection.appendChild(nextBtn);
+
+  // Ajoute le crédit juste sous le bouton
+  const creditDiv = createCreditDiv();
+  nextBtn.insertAdjacentElement('afterend', creditDiv);
 }
 
-// === 6. Affichage du résultat ===
+// === 7. Affichage du résultat ===
 function showResult() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
   showSection('result-section');
+  updateProgressBar(questions.length, questions.length, true);
+
   const resultSection = document.getElementById('result-section');
   resultSection.innerHTML = '';
 
@@ -388,7 +411,7 @@ function showResult() {
   scoreDiv.textContent = `${percentScore}%`;
   resultSection.appendChild(scoreDiv);
 
-   // Bloc explication du profil
+  // Bloc explication du profil
   const bloc = document.createElement('div');
   bloc.innerHTML = profil.explanation;
   resultSection.appendChild(bloc);
@@ -399,15 +422,28 @@ function showResult() {
   restartBtn.id = "restart-btn";
   restartBtn.addEventListener('click', restartQuiz);
   resultSection.appendChild(restartBtn);
+
+  // Ajoute le crédit
+  const creditDiv = createCreditDiv();
+  restartBtn.insertAdjacentElement('afterend', creditDiv);
 }
-// === 7. Réinitialisation du quiz ===
+
+// === 8. Création du crédit (unique) ===
+function createCreditDiv() {
+  const creditDiv = document.createElement('div');
+  creditDiv.className = "credit";
+  creditDiv.innerHTML = `Créé par <a href="https://www.linkedin.com/in/johan-creeten" target="_blank" rel="noopener">Johan Creeten</a> | CC-BY-2.0`;
+  return creditDiv;
+}
+
+// === 9. Réinitialisation du quiz ===
 function restartQuiz() {
   currentQuestion = 0;
   userAnswers = [];
   showIntro();
 }
 
-// === 8. Lancement du quiz (depuis l'intro) ===
+// === 10. Lancement du quiz (depuis l'intro) ===
 document.addEventListener('DOMContentLoaded', function() {
   // Bouton démarrer dans l'intro
   const startBtn = document.getElementById('start-btn');
@@ -419,6 +455,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Affiche l'intro au démarrage
+  // Ajoute le crédit à l'intro s'il n'est pas déjà là (pour la 1re page)
   showIntro();
 });
