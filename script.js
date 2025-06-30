@@ -269,6 +269,7 @@ function showIntro() {
 
 // === 5. Affichage d'une question ===
 function renderQuestion(index) {
+  window.scrollTo({top: 0, behavior: 'smooth'});
   showSection('quiz-section');
   const progressBar = document.getElementById('progress-bar');
 if (progressBar) {
