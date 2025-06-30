@@ -367,7 +367,20 @@ function showResult() {
   else if (score >= 3) profil = profils[1];
   else profil = profils[0];
 
-  // Affichage du profil
+  // Calcul du pourcentage
+  const percentScore = Math.round((score / questions.length) * 100);
+
+  // Score mis en valeur en haut
+  const scoreDiv = document.createElement('div');
+  scoreDiv.style.textAlign = "center";
+  scoreDiv.style.fontSize = "2.7em";
+  scoreDiv.style.fontWeight = "900";
+  scoreDiv.style.color = profil.border;
+  scoreDiv.style.marginBottom = "18px";
+  scoreDiv.textContent = `${percentScore}%`;
+  resultSection.appendChild(scoreDiv);
+
+  // Titre du profil
   const titre = document.createElement('div');
   titre.innerHTML = profil.title;
   titre.style.textAlign = "center";
@@ -377,6 +390,7 @@ function showResult() {
   titre.style.color = profil.border;
   resultSection.appendChild(titre);
 
+  // Bloc explication du profil
   const bloc = document.createElement('div');
   bloc.innerHTML = profil.explanation;
   resultSection.appendChild(bloc);
@@ -388,7 +402,6 @@ function showResult() {
   restartBtn.addEventListener('click', restartQuiz);
   resultSection.appendChild(restartBtn);
 }
-
 // === 7. Réinitialisation du quiz ===
 function restartQuiz() {
   currentQuestion = 0;
