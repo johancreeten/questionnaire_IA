@@ -1,3 +1,4 @@
+// === 1. Données (questions, profils, etc.) : À reprendre tel quel depuis ton script d'origine ===
 const questions = [
   {
     text: "📄 Vous venez d'utiliser un outil d'IA pour rédiger un résumé détaillé d'un document complexe. Quelques heures plus tard, un collègue vous demande une information clé de ce résumé...",
@@ -56,6 +57,7 @@ const questions = [
     ]
   }
 ];
+
 
 const profils = [
   // 0-2 points
@@ -246,6 +248,165 @@ const profils = [
     `
   }
 ];
+
+
+// === 2. Variables d'état ===
+let currentQuestion = 0;
+let userAnswers = [];
+let userName = "";
+
+// === 3. Fonctions utilitaires pour l'affichage harmonisé ===
+function showSection(sectionId) {
+  document.querySelectorAll('.main-container section').forEach(section => {
+    section.classList.remove('active');
+  });
+  const target = document.getElementById(sectionId);
+  if (target) target.classList.add('active');
+}
+
+// === 4. Affichage Intro ===
+function showIntro() {
+  showSection('intro-section');
+  // Ici, tout contenu dynamique d'intro peut être réinitialisé au besoin
+  // (ex: vider le champ nom si tu l'utilises)
+}
+
+// === 5. Affichage d'une question ===
+function renderQuestion(index) {
+  showSection('quiz-section');
+  const quizSection = document.getElementById('quiz-section');
+  quizSection.innerHTML = '';
+
+  const q = questions[index];
+  if (!q) return;
+
+  // Titre question
+  const questionElem = document.createElement('h2');
+  questionElem.textContent = q.question;
+  quizSection.appendChild(questionElem);
+
+  // Options
+  const optionsList = document.createElement('div');
+  optionsList.className = 'options-list';
+
+  q.options.forEach((opt, i) => {
+    const label = document.createElement('label');
+    label.className = 'choice-button';
+    label.style.display = 'block';
+
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'option';
+    input.value = i;
+    if (userAnswers[index] === i) input.checked = true;
+
+    input.addEventListener('change', function() {
+      document.querySelectorAll('.choice-button').forEach(lab => lab.classList.remove('selected'));
+      label.classList.add('selected');
+    });
+
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(opt));
+    optionsList.appendChild(label);
+  });
+
+  quizSection.appendChild(optionsList);
+
+  // Bouton suivant ou valider
+  let nextBtn = document.createElement('button');
+  nextBtn.textContent = (index < questions.length - 1) ? 'Suivant' : 'Voir mon profil IA';
+  nextBtn.id = (index < questions.length - 1) ? 'next-btn' : 'submit-btn';
+
+  nextBtn.addEventListener('click', function() {
+    const checked = quizSection.querySelector('input[name="option"]:checked');
+    if (!checked) {
+      alert('Merci de choisir une réponse.');
+      return;
+    }
+    userAnswers[index] = parseInt(checked.value, 10);
+    if (index < questions.length - 1) {
+      currentQuestion++;
+      renderQuestion(currentQuestion);
+    } else {
+      showResult();
+    }
+  });
+
+  quizSection.appendChild(nextBtn);
+}
+
+// === 6. Affichage du résultat ===
+function showResult() {
+  showSection('result-section');
+  const resultSection = document.getElementById('result-section');
+  resultSection.innerHTML = '';
+
+  // Calcul du profil majoritaire
+  let score = new Array(profiles.length).fill(0);
+  userAnswers.forEach(ans => {
+    if (typeof ans === "number" && profiles[ans]) {
+      score[ans]++;
+    }
+  });
+  const maxScore = Math.max(...score);
+  const winnerIndex = score.indexOf(maxScore);
+  const profile = profiles[winnerIndex] || { title: "Profil inconnu", description: "" };
+
+  // Affichage
+  const title = document.createElement('h2');
+  title.textContent = profile.title;
+  resultSection.appendChild(title);
+
+  const desc = document.createElement('p');
+  desc.textContent = profile.description;
+  resultSection.appendChild(desc);
+
+  // Bouton recommencer
+  const restartBtn = document.createElement('button');
+  restartBtn.textContent = "Recommencer";
+  restartBtn.id = "restart-btn";
+  restartBtn.addEventListener('click', restartQuiz);
+  resultSection.appendChild(restartBtn);
+}
+
+// === 7. Réinitialisation du quiz ===
+function restartQuiz() {
+  currentQuestion = 0;
+  userAnswers = [];
+  showIntro();
+}
+
+// === 8. Lancement du quiz (depuis l'intro) ===
+document.addEventListener('DOMContentLoaded', function() {
+  // Gestion bouton démarrer
+  const startBtn = document.getElementById('start-btn');
+  if (startBtn) {
+    startBtn.addEventListener('click', function() {
+      currentQuestion = 0;
+      userAnswers = [];
+      renderQuestion(currentQuestion);
+    });
+  }
+
+  // Au chargement, on affiche l'intro
+  showIntro();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ... (questions & profils, inchangés, voir plus haut ou dans tes versions précédentes - pas de changement JS ici)
 
