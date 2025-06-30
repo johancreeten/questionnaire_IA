@@ -1,4 +1,4 @@
-// === 1. Données (questions, profils, etc.) : À reprendre tel quel depuis ton script d'origine ===
+// === 1. Données (questions, profils, etc.) : À reprendre tel quel ===
 const questions = [
   {
     text: "📄 Vous venez d'utiliser un outil d'IA pour rédiger un résumé détaillé d'un document complexe. Quelques heures plus tard, un collègue vous demande une information clé de ce résumé...",
@@ -249,13 +249,11 @@ const profils = [
   }
 ];
 
-
 // === 2. Variables d'état ===
 let currentQuestion = 0;
 let userAnswers = [];
-let userName = "";
 
-// === 3. Fonctions utilitaires pour l'affichage harmonisé ===
+// === 3. Affichage harmonisé section par section ===
 function showSection(sectionId) {
   document.querySelectorAll('.main-container section').forEach(section => {
     section.classList.remove('active');
@@ -264,11 +262,9 @@ function showSection(sectionId) {
   if (target) target.classList.add('active');
 }
 
-// === 4. Affichage Intro ===
+// === 4. Affichage de l'intro ===
 function showIntro() {
   showSection('intro-section');
-  // Ici, tout contenu dynamique d'intro peut être réinitialisé au besoin
-  // (ex: vider le champ nom si tu l'utilises)
 }
 
 // === 5. Affichage d'une question ===
@@ -280,16 +276,29 @@ function renderQuestion(index) {
   const q = questions[index];
   if (!q) return;
 
-  // Titre question
+  // Image si présente
+  if (q.img) {
+    const img = document.createElement('img');
+    img.src = q.img;
+    img.alt = "";
+    img.className = "question-illustration";
+    img.loading = "lazy";
+    img.style.width = "100%";
+    img.style.maxWidth = "370px";
+    img.style.marginBottom = "18px";
+    quizSection.appendChild(img);
+  }
+
+  // Texte question
   const questionElem = document.createElement('h2');
-  questionElem.textContent = q.question;
+  questionElem.textContent = q.text || q.question;
   quizSection.appendChild(questionElem);
 
-  // Options
+  // Choix de réponse
   const optionsList = document.createElement('div');
   optionsList.className = 'options-list';
 
-  q.options.forEach((opt, i) => {
+  (q.answers || q.options).forEach((opt, i) => {
     const label = document.createElement('label');
     label.className = 'choice-button';
     label.style.display = 'block';
@@ -306,7 +315,7 @@ function renderQuestion(index) {
     });
 
     label.appendChild(input);
-    label.appendChild(document.createTextNode(opt));
+    label.appendChild(document.createTextNode(opt.text || opt));
     optionsList.appendChild(label);
   });
 
@@ -341,25 +350,31 @@ function showResult() {
   const resultSection = document.getElementById('result-section');
   resultSection.innerHTML = '';
 
-  // Calcul du profil majoritaire
-  let score = new Array(profiles.length).fill(0);
-  userAnswers.forEach(ans => {
-    if (typeof ans === "number" && profiles[ans]) {
-      score[ans]++;
-    }
-  });
-  const maxScore = Math.max(...score);
-  const winnerIndex = score.indexOf(maxScore);
-  const profile = profiles[winnerIndex] || { title: "Profil inconnu", description: "" };
+  // Calcul du score total
+  let score = userAnswers.reduce((acc, curr, idx) => {
+    const answerObj = (questions[idx].answers || questions[idx].options)[curr];
+    return acc + (answerObj.value !== undefined ? answerObj.value : 0);
+  }, 0);
 
-  // Affichage
-  const title = document.createElement('h2');
-  title.textContent = profile.title;
-  resultSection.appendChild(title);
+  // Attribution du profil
+  let profil;
+  if (score >= 5) profil = profils[2];
+  else if (score >= 3) profil = profils[1];
+  else profil = profils[0];
 
-  const desc = document.createElement('p');
-  desc.textContent = profile.description;
-  resultSection.appendChild(desc);
+  // Affichage du profil
+  const titre = document.createElement('div');
+  titre.innerHTML = profil.title;
+  titre.style.textAlign = "center";
+  titre.style.marginBottom = "18px";
+  titre.style.fontSize = "2em";
+  titre.style.fontWeight = "700";
+  titre.style.color = profil.border;
+  resultSection.appendChild(titre);
+
+  const bloc = document.createElement('div');
+  bloc.innerHTML = profil.explanation;
+  resultSection.appendChild(bloc);
 
   // Bouton recommencer
   const restartBtn = document.createElement('button');
@@ -378,7 +393,7 @@ function restartQuiz() {
 
 // === 8. Lancement du quiz (depuis l'intro) ===
 document.addEventListener('DOMContentLoaded', function() {
-  // Gestion bouton démarrer
+  // Bouton démarrer dans l'intro
   const startBtn = document.getElementById('start-btn');
   if (startBtn) {
     startBtn.addEventListener('click', function() {
@@ -388,174 +403,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Au chargement, on affiche l'intro
+  // Affiche l'intro au démarrage
   showIntro();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ... (questions & profils, inchangés, voir plus haut ou dans tes versions précédentes - pas de changement JS ici)
-
-let current = -1;
-let score = 0;
-let answers = [];
-
-function render() {
-  let progressBar = document.getElementById('progress-bar');
-  if (current === -1) {
-    progressBar.style.display = 'none';
-    document.getElementById('app').innerHTML = `
-      <h1>
-        🕵️ Quel type d'utilisateur IA êtes-vous ?
-      </h1>
-      <div class="subtitle">
-        7 questions-clés pour révéler votre niveau et booster vos usages&nbsp;!
-      </div>
-      <div class="entry-content">
-        Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser et mieux utiliser l’intelligence artificielle au quotidien.<br><br>
-        Pour un résultat fiable, répondez en toute franchise à chaque question.<br>
-        Le masculin employé dans ce questionnaire l'est à titre épicène, pour simplifier la lecture.
-      </div>
-      <button id="startBtn">Commencer</button>
-      <div class="credit">
-        Créé par <a href="https://www.linkedin.com/in/johan-creeten" target="_blank">Johan Creeten</a> &nbsp;|&nbsp; <span>CC BY 2.0</span>
-      </div>
-    `;
-    document.getElementById('startBtn').onclick = () => {
-      current = 0; score = 0; answers = [];
-      render();
-    }
-    return;
-  } else {
-    progressBar.style.display = '';
-    const percent = Math.round((current / questions.length) * 100);
-    progressBar.innerHTML = `
-      <div id="progress-bar-inner" style="width:${percent}%;position:relative;">
-        <span>
-          ${percent}%
-        </span>
-      </div>
-    `;
-  }
-
-  if (current < questions.length) {
-    const q = questions[current];
-    document.getElementById('app').innerHTML = `
-      <img src="${q.img}" alt="" class="question-illustration" loading="lazy" width="700" height="400">
-      <div class="question-text">${q.text}</div>
-      <div class="choice-row">
-        ${q.answers.map((a, i) => `
-          <div class="choice-block" data-index="${i}">${a.text.replace(/^a\)\s*/i, '').replace(/^b\)\s*/i, '')}</div>
-        `).join('')}
-      </div>
-      <button id="nextBtn" type="button" disabled>Suivant</button>
-      <div class="credit">
-        Créé par <a href="https://www.linkedin.com/in/johan-creeten" target="_blank">Johan Creeten</a> &nbsp;|&nbsp; <span>CC BY 2.0</span>
-      </div>
-    `;
-
-    let selected = null;
-    const cards = document.querySelectorAll('.choice-block');
-    cards.forEach(card => {
-      card.addEventListener('click', function() {
-        cards.forEach(c => c.classList.remove('selected'));
-        this.classList.add('selected');
-        selected = parseInt(this.getAttribute('data-index'));
-        document.getElementById('nextBtn').disabled = false;
-      });
-    });
-
-    document.getElementById('nextBtn').onclick = function() {
-      if (selected !== null) {
-        answers[current] = q.answers[selected].value;
-        score += q.answers[selected].value;
-        current++;
-        render();
-      }
-    }
-    return;
-  }
-
-  if (current === questions.length) {
-    progressBar.style.display = 'none';
-    const percentScore = Math.round((score / questions.length) * 100);
-    let profil;
-    if (score >= 5) profil = profils[2];
-    else if (score >= 3) profil = profils[1];
-    else profil = profils[0];
-    let scoreColor = profil.border;
-
-    document.getElementById('app').innerHTML = `
-      <div id="result">
-        <div style="text-align:center; margin-bottom:39px;">
-          <span style="
-            display:inline-block;
-            font-size:2.4em;
-            font-weight:700;
-            color:${scoreColor};
-            margin-bottom:7px;
-            letter-spacing:1px;
-          ">${percentScore}%</span>
-          <div style="font-size:1.09em; color:#444; margin-top:3px;">de maîtrise IA</div>
-        </div>
-        <div style="
-          background:${profil.color};
-          border:2.5px solid ${profil.border};
-          border-radius:15px;
-          box-shadow:0 2px 12px #e1e2ea;
-          margin:10px 0 0 0;
-          padding:38px 24px 28px 24px;
-          max-width:700px;
-          margin-left:auto;margin-right:auto;
-        ">
-          ${profil.explanation}
-          <div style="text-align:center;">
-            <button style="margin-top:32px;" onclick="window.location.reload()">🔄 Recommencer le questionnaire</button>
-          </div>
-        </div>
-        <div style="margin-top:36px; font-size:0.99em; color:#666; max-width:700px; margin-left:auto; margin-right:auto; line-height:1.52; text-align:left;">
-          <hr style="margin:18px 0 14px 0; border:none; border-top:1px solid #e0e0e0;">
-          <div style="font-size:1em; margin-bottom:10px;">
-            <b>Ce questionnaire a été créé par <a href="https://www.linkedin.com/in/johan-creeten" target="_blank" style="color:#3973a5;text-decoration:underline;">Johan Creeten</a></b>
-            <span style="color:#bbb; font-size:0.96em; margin-left:7px;">CC BY 2.0</span>
-          </div>
-          <b>Sources :</b>
-          <div style="margin:10px 0 0 0; padding:0; text-align:left;">
-            <div style="margin-bottom:16px;">
-              Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., &amp; Maes, P. (2025). <i>Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task.</i> Prépublication (probablement arXiv:2506.08872v1), MIT Media Lab, MIT, Wellesley College, Mass. College of Art and Design (MassArt).
-            </div>
-            <div style="margin-bottom:16px;">
-              Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025). <i>The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers.</i> Dans CHI Conference on Human Factors in Computing Systems (CHI ’25), 26 avril – 1er mai 2025, Yokohama, Japon. ACM. DOI : 10.1145/3706598.3713778.
-            </div>
-            <div>
-              Gerlich, M. (2025). <i>AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking.</i> Societies, 15(1), 6. DOI : 10.3390/soc15010006
-            </div>
-          </div>
-        </div>
-        <div class="credit">
-          Créé par <a href="https://www.linkedin.com/in/johan-creeten" target="_blank">Johan Creeten</a> &nbsp;|&nbsp; <span>CC BY 2.0</span>
-        </div>
-      </div>
-    `;
-  }
-}
-
-window.onload = function() {
-  current = -1;
-  render();
-};
-
