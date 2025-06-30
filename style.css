@@ -268,3 +268,36 @@ section.active {
   h1 { font-size: 1.5em; }
   h2 { font-size: 1.12em; }
 }
+
+.progress-bar-inner {
+  background: #284ba8;
+  height: 100%;
+  border-radius: 4px;
+  position: relative;
+  transition: width 0.22s cubic-bezier(.5,.1,.39,1.1);
+  display: flex;
+  align-items: center;
+}
+
+.progress-percent {
+  position: absolute;
+  right: 8px;
+  top: -28px;
+  color: #284ba8;
+  font-weight: 700;
+  font-size: 1em;
+  background: #fff;
+  padding: 2px 9px;
+  border-radius: 9px;
+  box-shadow: 0 2px 8px rgba(40, 75, 168, 0.10);
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .progress-percent {
+    font-size: 0.99em;
+    right: 2px;
+    top: -23px;
+  }
+}
