@@ -3,13 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>🕵️ Quel genre d’utilisateur d’IA êtes-vous ?</title>
-  <meta name="viewport" content="width=800, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="description" content="Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser avec l’intelligence artificielle au quotidien.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="progress-bar"></div>
-  <div id="app"></div>
+  <!-- Le conteneur principal unique pour toutes les pages : -->
+  <div class="main-container" id="main-container">
+    <!-- Toutes les sections dynamiques seront injectées ici par JS -->
+    <section id="intro-section">
+      <!-- ... contenu d’introduction ... -->
+    </section>
+    <section id="quiz-section" style="display:none;">
+      <!-- ... questions et choix ... -->
+    </section>
+    <section id="result-section" style="display:none;">
+      <!-- ... résultats des profils ... -->
+    </section>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
