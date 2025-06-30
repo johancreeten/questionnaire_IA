@@ -12,35 +12,44 @@ body {
   height: 4px;
   background: #e0e4e8;
   margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
-/* Conteneur principal harmonisé pour toutes les pages */
+#progress-bar > div {
+  background: #284ba8;
+  height: 100%;
+  transition: width 0.22s cubic-bezier(.5,.1,.39,1.1);
+  border-radius: 4px;
+}
+
+/* Conteneur principal harmonisé */
 .main-container {
-  max-width: 430px;
-  margin: 40px auto 0 auto;
-  padding: 30px 28px 40px 28px;
+  max-width: 540px;
+  margin: 44px auto 0 auto;
+  padding: 38px 36px 50px 36px;
   background: #fff;
   border-radius: 32px;
-  box-shadow: 0 4px 40px 0 rgba(31, 47, 70, 0.14);
-  font-size: clamp(16px, 2.4vw, 20px);
+  box-shadow: 0 4px 40px 0 rgba(31, 47, 70, 0.13);
+  font-size: clamp(16px, 2.2vw, 21px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  min-height: 60vh;
+  min-height: 62vh;
   /* pour éviter que ce soit trop écrasé */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .main-container {
     max-width: 96vw;
-    padding: 8vw 3vw;
-    margin-top: 6vw;
+    padding: 6vw 3vw;
+    margin-top: 5vw;
     border-radius: 7vw;
-    box-shadow: 0 2vw 10vw 0 rgba(31,47,70,0.13);
-    font-size: clamp(16px, 4vw, 22px);
+    font-size: clamp(15px, 4vw, 21px);
   }
 }
 
+/* Titres et textes */
 h1, h2, h3 {
   margin-top: 0;
   font-family: inherit;
@@ -50,35 +59,36 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.1em;
+  font-size: 2.15em;
 }
 
 h2 {
-  font-size: 1.4em;
+  font-size: 1.35em;
 }
 
 p, li, label, span, .option-label {
   color: #1f2f46;
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.58;
 }
 
 ul {
   padding-left: 1.3em;
   margin-top: 0;
-  margin-bottom: 1em;
+  margin-bottom: 1.15em;
 }
 
+/* Boutons */
 button, .choice-button {
   background: #284ba8;
   color: #fff;
   border: none;
   border-radius: 22px;
-  padding: 12px 28px;
+  padding: 14px 32px;
   font-size: 1em;
   font-weight: 700;
   cursor: pointer;
-  margin: 10px 0 0 0;
+  margin: 12px 0 0 0;
   transition: background 0.15s, box-shadow 0.15s;
   box-shadow: 0 2px 8px 0 rgba(40, 75, 168, 0.08);
 }
@@ -110,35 +120,34 @@ section.active {
   width: 100%;
 }
 
-/* Pour la section de résultat si tu as des styles spéciaux */
-#result-section {
-  /* Si tu veux ajouter une couleur de fond spéciale, tu peux le faire ici */
-}
-
-/* Pour des images éventuelles dans les sections */
+/* Images dans les sections */
+.question-illustration,
 .main-container img {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  margin: 18px 0;
+  margin: 18px 0 26px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Pour les labels ou tags particuliers */
+/* Tags/labels */
 .tag {
   display: inline-block;
   background: #f0f5ff;
   color: #284ba8;
   padding: 2px 12px;
   border-radius: 10px;
-  font-size: 0.96em;
+  font-size: 0.98em;
   margin: 0 4px;
 }
 
-/* Pour garder une expérience fluide sur très petits écrans */
+/* Petits écrans */
 @media (max-width: 400px) {
   .main-container {
     padding: 4vw 1vw;
-    font-size: clamp(15px, 5vw, 18px);
+    font-size: clamp(14px, 5vw, 18px);
   }
 }
 
@@ -150,4 +159,65 @@ section.active {
 ::-webkit-scrollbar-thumb {
   background: #bfc8d6;
   border-radius: 6px;
+}
+
+/* Liste de choix de réponses */
+.options-list {
+  margin-bottom: 16px;
+}
+
+.choice-button {
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 1.07em;
+  background: #f7f9ff;
+  color: #284ba8;
+  border: 2px solid #e3eafe;
+  border-radius: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.13s, border 0.13s, color 0.13s;
+}
+
+.choice-button.selected, .choice-button.active {
+  background: #dbeaff;
+  color: #19306e;
+  border: 2px solid #284ba8;
+}
+
+.choice-button input[type="radio"] {
+  accent-color: #284ba8;
+}
+
+@media (max-width: 600px) {
+  .choice-button {
+    font-size: 1em;
+    padding: 14px 12px;
+    border-radius: 13px;
+  }
+}
+
+/* Bloc profil résultat personnalisé */
+#result-section > div {
+  background: #f9fafc;
+  border-radius: 22px;
+  padding: 32px 20px;
+  margin-top: 20px;
+}
+
+.bloc-orange {
+  background: #fff4e6;
+  border-radius: 12px;
+  padding: 18px 18px 12px 18px;
+  margin-bottom: 22px;
+  border: 1.5px solid #ffd2a7;
+}
+
+/* Responsive petites largeurs */
+@media (max-width: 400px) {
+  h1 { font-size: 1.5em; }
+  h2 { font-size: 1.12em; }
 }
