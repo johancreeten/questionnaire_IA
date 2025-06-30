@@ -273,12 +273,14 @@ function renderQuestion(index) {
   showSection('quiz-section');
   const progressBar = document.getElementById('progress-bar');
 if (progressBar) {
-  const percent = Math.round(((index + 1) / questions.length) * 100);
+  // Calcul : "index" questions répondues sur "questions.length"
+  const percent = Math.round((index / questions.length) * 100);
   progressBar.innerHTML = `
     <div class="progress-bar-inner" style="width:${percent}%">
       <span class="progress-percent">${percent}%</span>
     </div>
   `;
+}
 }
 
   const quizSection = document.getElementById('quiz-section');
