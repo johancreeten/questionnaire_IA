@@ -247,6 +247,8 @@ const profils = [
   }
 ];
 
+// ... (questions & profils, inchangés, voir plus haut ou dans tes versions précédentes - pas de changement JS ici)
+
 let current = -1;
 let score = 0;
 let answers = [];
@@ -395,3 +397,4 @@ window.onload = function() {
   current = -1;
   render();
 };
+
