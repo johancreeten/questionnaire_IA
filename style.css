@@ -87,6 +87,14 @@ h2 {
   margin-top: 0.5em;
 }
 
+/* QUESTIONS NON GRAS */
+#quiz-section h2 {
+  font-weight: 400;
+  font-size: 1.19em;
+  margin-top: 0.3em;
+  margin-bottom: 0.7em;
+}
+
 p, li, label, span, .option-label {
   color: #1f2f46;
   font-size: 1em;
