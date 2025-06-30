@@ -66,6 +66,7 @@ body {
   line-height: 1.55;
 }
 
+/* N.B. en italique et bleu-gris */
 .intro-texte em {
   display: block;
   font-style: italic;
@@ -93,6 +94,26 @@ h2 {
   font-size: 1.19em;
   margin-top: 0.3em;
   margin-bottom: 0.7em;
+}
+
+/* Justification globale des textes */
+p,
+.intro-texte,
+ul,
+li,
+.bloc-orange,
+#result-section > div,
+.options-list,
+.choice-button,
+#quiz-section h2,
+#result-section h2,
+#result-section div {
+  text-align: justify;
+}
+
+/* Liste puces résultats : interligne avant chaque puce (sauf la 1ère) */
+.bloc-orange ul li + li {
+  margin-top: 10px;
 }
 
 p, li, label, span, .option-label {
