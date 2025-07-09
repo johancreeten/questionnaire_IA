@@ -103,7 +103,8 @@ body {
   margin-top: 18px;
   margin-bottom: 12px;
   font-size: 1.16em;
-  line-height: 1.55;
+  line-height: 1.58;
+  text-align: justify;
 }
 
 /* N.B. en italique et bleu-gris */
@@ -128,12 +129,18 @@ h2 {
   margin-top: 0.5em;
 }
 
-/* QUESTIONS NON GRAS */
+/* Harmonisation : questions et réponses même espacement et justifié */
+#quiz-section h2,
+.choice-button {
+  line-height: 1.58;
+}
+
 #quiz-section h2 {
   font-weight: 400;
   font-size: 1.19em;
   margin-top: 0.3em;
-  margin-bottom: 0.7em;
+  margin-bottom: 1.15em;
+  text-align: justify;
 }
 
 /* Justification globale des textes */
@@ -151,9 +158,16 @@ li,
   text-align: justify;
 }
 
-/* Liste puces résultats : interligne avant chaque puce (sauf la 1ère) */
-.bloc-orange ul li + li {
-  margin-top: 10px;
+ul {
+  padding-left: 1.3em;
+  margin-top: 0;
+  margin-bottom: 1.15em;
+}
+
+/* Liste puces résultats : interligne avant chaque puce (sauf la 1ère) + PLUS D'ESPACEMENT */
+.bloc-orange ul li + li,
+#result-section ul li + li {
+  margin-top: 30px !important;
 }
 
 /* Interligne après chaque exemple dans les listes de résultats */
@@ -167,12 +181,6 @@ p, li, label, span, .option-label {
   color: #1f2f46;
   font-size: 1em;
   line-height: 1.58;
-}
-
-ul {
-  padding-left: 1.3em;
-  margin-top: 0;
-  margin-bottom: 1.15em;
 }
 
 /* Boutons centrés */
@@ -192,22 +200,75 @@ button, .choice-button {
   text-align: center;
 }
 
-button:active, .choice-button:active {
-  background: #19306e;
-}
-button:focus, .choice-button:focus {
-  outline: 2px solid #203e87;
-}
-.choice-button.selected, .choice-button.active {
-  background: #e0e8ff;
+/* Réponses sous forme de bouton mais texte justifié et fond clair */
+.choice-button {
+  background: #f7f9ff;
   color: #284ba8;
-  box-shadow: 0 0 0 2px #284ba8;
-}
-input[type="radio"], input[type="checkbox"] {
-  margin-right: 0.8em;
-  accent-color: #284ba8;
+  border: 2px solid #e3eafe;
+  border-radius: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.13s, border 0.13s, color 0.13s, font-weight 0.13s;
+  text-align: justify;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  font-size: 1.07em;
 }
 
+/* Réponse survolée (hover) */
+.choice-button:hover {
+  background: #e0e8ff;
+  color: #284ba8;
+  border: 2px solid #284ba8;
+  transition: background 0.13s, color 0.13s, border 0.13s;
+}
+
+/* Réponse sélectionnée */
+.choice-button.selected, .choice-button.active {
+  background: #e6fbe6;
+  color: #24b524;
+  border: 2px solid #24b524;
+  font-weight: 700;
+  transition: background 0.13s, color 0.13s, border 0.13s, font-weight 0.13s;
+}
+
+/* Coche verte sur radio sélectionné */
+.choice-button.selected input[type="radio"],
+.choice-button.active input[type="radio"] {
+  accent-color: #24b524;
+}
+
+/* Bouton "suivant" ou "valider" en vert après sélection */
+button.next-green,
+button#submit-btn.next-green {
+  background: #24b524 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 2px 12px 0 #4ee37833;
+  transition: background 0.13s, color 0.13s, box-shadow 0.13s;
+}
+button.next-green:active,
+button#submit-btn.next-green:active {
+  background: #19891c !important;
+}
+
+/* Radio styling */
+.choice-button input[type="radio"] {
+  accent-color: #284ba8;
+  margin-right: 0.8em;
+}
+
+/* Responsive réponses */
+@media (max-width: 600px) {
+  .choice-button {
+    font-size: 1em;
+    padding: 14px 12px;
+    border-radius: 13px;
+  }
+}
+
+/* Section cachée sauf active */
 section {
   display: none;
 }
@@ -259,44 +320,6 @@ section.active {
   border-radius: 6px;
 }
 
-/* Liste de choix de réponses */
-.options-list {
-  margin-bottom: 16px;
-}
-
-.choice-button {
-  margin-bottom: 16px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  font-size: 1.07em;
-  background: #f7f9ff;
-  color: #284ba8;
-  border: 2px solid #e3eafe;
-  border-radius: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: none;
-  transition: background 0.13s, border 0.13s, color 0.13s;
-  text-align: center;
-}
-.choice-button.selected, .choice-button.active {
-  background: #dbeaff;
-  color: #19306e;
-  border: 2px solid #284ba8;
-}
-.choice-button input[type="radio"] {
-  accent-color: #284ba8;
-}
-
-@media (max-width: 600px) {
-  .choice-button {
-    font-size: 1em;
-    padding: 14px 12px;
-    border-radius: 13px;
-  }
-}
-
 /* Bloc profil résultat personnalisé */
 #result-section > div {
   background: #f9fafc;
@@ -330,4 +353,9 @@ section.active {
 @media (max-width: 400px) {
   h1 { font-size: 1.5em; }
   h2 { font-size: 1.12em; }
+}
+
+/* Liste de choix de réponses */
+.options-list {
+  margin-bottom: 16px;
 }

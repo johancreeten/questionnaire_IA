@@ -11,23 +11,50 @@
   <div id="progress-bar"></div>
   <!-- Le conteneur principal unique pour toutes les pages : -->
   <div class="main-container" id="main-container">
-  <section id="intro-section">
-  <h1 class="titre-bleu">🕵️ Quel genre d’utilisateur d’IA êtes-vous ?</h1>
-  <p class="intro-texte">
-    Testez-vous en 2 minutes et découvrez des conseils personnalisés pour progresser avec l’intelligence artificielle au quotidien.
-    <br><br>
-    Pour un résultat fiable, répondez en toute franchise à chaque question.
-    <br><br>
-    <em style="font-size:0.99em;">
-      N.B.&nbsp;: L'utilisation du masculin dans ce questionnaire est à titre épicène pour plus de lisibilité.
-    </em>
-  </p>
-  <button id="start-btn">Démarrer le test</button>
-</section>
+    <section id="intro-section">
+      <h1 class="titre-bleu">🕵️ Quel genre d’utilisateur d’IA êtes-vous ?</h1>
+      <p class="intro-texte">
+        Testez-vous en 5 minutes et découvrez votre profil de maturité à l'IA avec des pistes d'amélioration concrètes..
+        <br><br>
+        Pour un résultat fiable, répondez en toute franchise à chaque question.
+        <br><br>
+        <em style="font-size:0.99em;">
+          N.B.&nbsp;: Pour plus de lisibilité, l'utilisation du masculin dans ce questionnaire est à titre épicène.
+        </em>
+      </p>
+      <button id="start-btn">Démarrer le test</button>
+    </section>
     <section id="quiz-section"></section>
     <section id="result-section"></section>
   </div>
-
+  
+  <!-- === Bibliographie complète (apparait toujours en bas de page) === -->
+<section id="bibliographie" style="margin:60px 0 40px 0; background:#f9f9fb; border-radius:10px; border:1.5px solid #d6d6e7; padding:34px 20px;">
+  <h2 style="font-size:1.35em; color:#274a8a; margin-bottom:22px;">Bibliographie complète</h2>
+  <ul style="line-height:1.66; font-size:1.08em;">
+    <li>Dadeshkeliani, B. (2025). <em>The Psychology of Artificial Intelligence: Analyzing Cognitive and Emotional Characteristics, Human-Ai Interaction, and Ethical Considerations.</em> International Journal of Social Science and Human Research, 08(03), 1508–1514. DOI : 10.47191/ijsshr/v8-i3-23.</li>
+    <li>Jose, B., Cherian, J., Verghis, A. M., Varghise, S. M., S, M., & Joseph, S. (2025). <em>The cognitive paradox of AI in education: between enhancement and erosion.</em> Frontiers in Psychology, 16(1550621). DOI : 10.3389/fpsyg.2025.1550621.</li>
+    <li>Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X. H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025). <em>Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task.</em> (Document distribué sous licence CC BY-NC-SA).</li>
+    <li>Lee, H. P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., & Wilson, N. (2025). <em>The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers.</em> Dans CHI Conference on Human Factors in Computing Systems (CHI ’25) (p. 23 pages). ACM. DOI : 10.1145/3706598.3713778.</li>
+    <li>Naveenraj, X., Biswas, R., Choudhary, S., & Kumari, S. (2025). <em>AI and Social Interactions: How Artificial Intelligence is Shaping Human Psychology and Social Dynamics.</em> Journal of Informatics Education and Research, 5(2). ISSN: 1526-4726.</li>
+    <li>Sandford, A., Mulligan, B., Gittens, E., Norris, M., & Fernandes, M. (2024). <em>ARTIFICIAL INTELLIGENCE AND PSYCHOLOGY BRIEFING PAPER.</em> Canadian Psychological Association (CPA).</li>
+    <li>Szmyd, K., & Mitera, E. (2024). <em>The Impact of Artificial Intelligence on the Development of Critical Thinking Skills in Students.</em> European Research Studies Journal, XXVII(2), 1022–1039.</li>
+    <li>van Rooij, I., Guest, O., Adolfi, F., de Haan, R., Kolokolova, A., & Rich, P. (2024). <em>Reclaiming AI as a theoretical tool for cognitive science.</em> Computational Brain & Behavior, 7, 616–636.</li>
+    <li>Zao-Sanders, M. (2025). <em>The 2025 Top-100 Gen AI Use Case Report.</em> (Document en libre accès distribué sous licence Creative Commons Attribution).</li>
+  </ul>
+</section>
+  
   <script src="script.js"></script>
+  <script>
+    // Scroll doux pour tous les liens vers #bibliographie
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href="#bibliographie"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.getElementById('bibliographie').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
