@@ -543,7 +543,7 @@ function showSection(sectionId) {
 
 // === 4. Affichage de l'intro ===
 function showIntro() {
-  document.getElementById('progress-bar').style.display = "";
+  document.getElementById('progress-bar').style.display = "none";
   showSection('intro-section');
   updateProgressBar(0, questions.length);
   const introSection = document.getElementById('intro-section');
@@ -570,7 +570,7 @@ function updateProgressBar(index, total, isResult = false) {
 // === 6. Affichage d'une question ===
 function renderQuestion(index) {
   window.scrollTo({top: 0, behavior: 'smooth'});
-  document.getElementById('progress-bar').style.display = "none";
+  document.getElementById('progress-bar').style.display = "flex";
   showSection('quiz-section');
   updateProgressBar(index, questions.length);
 
