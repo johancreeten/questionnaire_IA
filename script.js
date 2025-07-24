@@ -570,7 +570,7 @@ function updateProgressBar(index, total, isResult = false) {
 // === 6. Affichage d'une question ===
 function renderQuestion(index) {
   window.scrollTo({top: 0, behavior: 'smooth'});
-  document.getElementById('progress-bar').style.display = "";
+  document.getElementById('progress-bar').style.display = "none";
   showSection('quiz-section');
   updateProgressBar(index, questions.length);
 
@@ -674,6 +674,7 @@ function renderQuestion(index) {
 // === 7. Affichage du résultat ===
 function showResult() {
   window.scrollTo({top: 0, behavior: 'smooth'});
+  document.getElementById('progress-bar').style.display = "none";
   showSection('result-section');
   updateProgressBar(questions.length, questions.length, true);
 
